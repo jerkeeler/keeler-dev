@@ -1,0 +1,13 @@
+.about-img {
+  border-radius: 50%;
+  float: left;
+  min-width: 200px;
+  margin: 20px 30px;
+}
+
+@media (max-width: 600px) {
+  .about-img {
+      float: none;
+      margin: 0 auto;
+  }
+}
