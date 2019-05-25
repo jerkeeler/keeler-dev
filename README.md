@@ -1,5 +1,7 @@
 # keeler.dev
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/371d03a4-f192-480f-a5da-0e551bea79da/deploy-status)](https://app.netlify.com/sites/kind-agnesi-dd5ea1/deploys)
+
 keeler.dev is made using [gatsby](https://github.com/gatsbyjs/gatsby) and is deployed using [netlify](https://www.netlify.com/). Development uses the standard gatsby flow. Gatsby docs can be found [here for more information](https://www.gatsbyjs.org/docs/).
 
 ## Development
@@ -20,3 +22,5 @@ gatsby develop
 ```
 
 ## Deployment
+
+Netlify handles all deployment automatically and seamlessly. All you have to do is push to master. Netlify will automatically run `gatsby build` and publish the files to their cdn. You will receive an email notification when a new deploy goes out.

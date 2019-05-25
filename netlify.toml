@@ -1,0 +1,10 @@
+[build]
+  base = ""
+  publish = "public/"
+  command = "gatsby build"
+
+[[redirects]]
+  from = "https://kind-agnesi-dd5ea1.netlify.com/*"
+  to = "https://keeler.dev/:splat"
+  status = 301
+  force = true
