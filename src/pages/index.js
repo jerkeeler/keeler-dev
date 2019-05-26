@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => (
     <h1>Home</h1>
 
     <p>
-      Home to Jeremy Keeler, software engineer, geologist, and outdoor enthusiast. Prone to thoughts, ramblings,
+      A corner of the cosmos for Jeremy Keeler, software engineer, geologist, and outdoor enthusiast. Prone to thoughts, ramblings,
       musings, and other writings.
     </p>
 
