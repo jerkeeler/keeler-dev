@@ -3,6 +3,7 @@ module.exports = {
     title: `keeler.dev`,
     description: `The life, thoughts, ramblings, musings, and photos of Jeremy Keeler. Software engineer, geologist, and nature enthusist.`,
     author: `@jerkeeler`,
+    siteUrl: `https://keeler.dev`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -76,7 +77,61 @@ module.exports = {
           }
         ]
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.description,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  guid: edge.node.frontmatter.path,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  filter: { frontmatter: { draft: { ne: true } } }
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      html
+                      frontmatter {
+                        title
+                        date
+                        path
+                        description
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "keeler.dev RSS feed",
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

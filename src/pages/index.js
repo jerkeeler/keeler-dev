@@ -28,6 +28,8 @@ const IndexPage = ({ data }) => (
         </li>
       ))}
     </ul>
+
+    <p><Link to="/rss.xml">RSS Feed</Link></p>
   </Layout>
 );
 
