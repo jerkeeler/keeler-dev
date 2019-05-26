@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `keeler.dev`,
-    description: `The life, thoughts, and photos, of Jeremy Keeler. Software engineer, geologist, and nature enthusist.`,
+    description: `The life, thoughts, ramblings, musings, and photos of Jeremy Keeler. Software engineer, geologist, and nature enthusist.`,
     author: `@jerkeeler`,
   },
   plugins: [
