@@ -4,6 +4,8 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
+import styles from './index.module.css';
+
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO />
@@ -11,13 +13,13 @@ const IndexPage = ({ data }) => (
     <h1>Home</h1>
 
     <p>
-      Home to Jeremy K, software engineer, geologist, and outdoor enthusiast.
-      Prone to thoughts, rambles, musings, and other writings.
+      Home to Jeremy Keeler, software engineer, geologist, and outdoor enthusiast.
+      Prone to thoughts, ramblings, musings, and other writings.
     </p>
 
-    <h4>2019</h4>
+    <h4 className={styles.year}>2019</h4>
 
-    <ul>
+    <ul className={styles.postList}>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <li key={node.frontmatter.path}>
           <Link to={node.frontmatter.path}>{node.frontmatter.date} - {node.frontmatter.title}</Link>
@@ -40,7 +42,7 @@ export const query = graphql`
           frontmatter {
             path
             title
-            date(formatString: "YYYY-MM-DD")
+            date(formatString: "MMMM DD")
           }
         }
       }
