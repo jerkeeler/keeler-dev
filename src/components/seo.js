@@ -22,7 +22,7 @@ function SEO({ description, lang, meta, title }) {
           }
         }
       }
-    `
+    `,
   );
 
   const baseTitle = site.siteMetadata.title;
@@ -71,7 +71,7 @@ function SEO({ description, lang, meta, title }) {
       ].concat(meta)}
     />
   );
-};
+}
 
 SEO.defaultProps = {
   lang: `en`,

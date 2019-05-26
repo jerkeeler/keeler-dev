@@ -27,6 +27,21 @@ module.exports = {
         icon: `src/images/minimal_j.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-108069665-3',
+        anonymize: true,
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/posts`,
+        name: 'markdown-posts',
+      }
+    },
+    `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

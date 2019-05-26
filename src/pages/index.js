@@ -1,17 +1,49 @@
-import React from 'react'
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/homepage/layout';
-import Link from '../components/homepage/link';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO />
-    <Link to="/blog/">Blog</Link>
-    <Link to="/projects/">Projects</Link>
-    <Link to="/about/">About</Link>
-    <Link to="/experiments/">Experiments</Link>
-  </Layout>
-)
 
-export default IndexPage
+    <h1>Home</h1>
+
+    <p>
+      Home to Jeremy K, software engineer, geologist, and outdoor enthusiast.
+      Prone to thoughts, rambles, musings, and other writings.
+    </p>
+
+    <h4>2019</h4>
+
+    <ul>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <li key={node.frontmatter.path}>
+          <Link to={node.frontmatter.path}>{node.frontmatter.date} - {node.frontmatter.title}</Link>
+        </li>
+      ))}
+    </ul>
+  </Layout>
+);
+
+export default IndexPage;
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      limit: 1000
+      sort: { fields: [frontmatter___date], order: ASC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            path
+            title
+            date(formatString: "YYYY-MM-DD")
+          }
+        }
+      }
+    }
+  }
+`;
