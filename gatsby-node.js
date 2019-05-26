@@ -4,7 +4,12 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+require('dotenv').config();
 const path = require('path');
+
+const {
+  CONTEXT
+} = process.env;
 
 function createPages({ actions, graphql }) {
   const { createPage } = actions;
@@ -20,6 +25,7 @@ function createPages({ actions, graphql }) {
         edges {
           node {
             frontmatter {
+              draft
               path
             }
           }
@@ -32,11 +38,14 @@ function createPages({ actions, graphql }) {
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: postTemplate,
-        context: {},
-      });
+      if ((CONTEXT == 'production' && !node.frontmatter.draft) ||
+           CONTEXT == 'development') {
+        createPage({
+          path: node.frontmatter.path,
+          component: postTemplate,
+          context: {},
+        });
+      }
     });
   });
 }

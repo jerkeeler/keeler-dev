@@ -35,7 +35,11 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    allMarkdownRemark(limit: 1000, sort: { fields: [frontmatter___date], order: ASC }) {
+    allMarkdownRemark(
+      limit: 1000
+      filter: { frontmatter: { draft: { ne: true } } }
+      sort: { fields: [frontmatter___date], order: ASC }
+    ) {
       edges {
         node {
           frontmatter {

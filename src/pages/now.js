@@ -6,7 +6,10 @@ import SEO from '../components/seo';
 
 const Now = () => (
   <Layout>
-    <SEO title="now" description="Jeremy's now page. What he is up to NOW. Music he's listening to, what he's doing, what books he's reading." />
+    <SEO
+      title="now"
+      description="Jeremy's now page. What he is up to NOW. Music he's listening to, what he's doing, what books he's reading."
+    />
 
     <h1>Now</h1>
 

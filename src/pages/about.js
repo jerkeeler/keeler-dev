@@ -9,7 +9,10 @@ import styles from './about.module.css';
 
 const About = ({ data }) => (
   <Layout>
-    <SEO title="about" description="Jeremy Keeler is a software engineer, geologist, and outdoor enthusiast. He currently works at Affirm, created/maintains aoestats.io on his spare time, and constantly goes backpacking." />
+    <SEO
+      title="about"
+      description="Jeremy Keeler is a software engineer, geologist, and outdoor enthusiast. He currently works at Affirm, created/maintains aoestats.io on his spare time, and constantly goes backpacking."
+    />
     <h1>About</h1>
 
     <Img fluid={data.image.childImageSharp.fluid} className={styles.aboutImg} alt="Jeremy's Face" />
