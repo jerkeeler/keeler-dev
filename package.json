@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "keeler-dev",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "The code for the keeler.dev website.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jeremy Keeler <jeremy.keeler@gmail.com>",
   "dependencies": {
     "gatsby": "^2.6.0",
     "gatsby-image": "^2.1.0",
@@ -29,18 +29,18 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "netlify-lambda build functions/src/ && gatsby build",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests!\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/jerkeeler/keeler-dev"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/jerkeeler/keeler-dev/issues"
   }
 }
