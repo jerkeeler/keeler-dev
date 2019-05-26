@@ -21,7 +21,7 @@ const Now = () => (
     <h3>JMT Prep</h3>
 
     <p>
-      I'm currently planning on doing a two week segement of the John Muir Trail with my brother (more info in various{' '}
+      I'm currently planning on doing a two week segment of the John Muir Trail with my brother (more info in various{' '}
       <Link to="/">blog posts</Link>) from August 4th to August 16th. In order to prepare I've been ordering new
       supplies, working out more, and eating healthier (harder, better, faster, stronger).
     </p>
