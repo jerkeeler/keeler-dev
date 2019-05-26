@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => (
       ))}
     </ul>
 
-    <p><Link to="/rss.xml">RSS Feed</Link></p>
+    <p><a href="/rss.xml">RSS Feed</a></p>
   </Layout>
 );
 
