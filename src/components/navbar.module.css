@@ -8,6 +8,10 @@
   margin-bottom: 7px;
 }
 
+.nav-link {
+  border-bottom: 2px solid rgb(36, 209, 248);
+}
+
 @media(max-width: 900px) {
   .nav-list {
       margin-bottom: 20px;
