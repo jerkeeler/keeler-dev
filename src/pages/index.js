@@ -1,37 +1,41 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import YearList from '../components/blog/year-list';
 
-import styles from './index.module.css';
+const IndexPage = ({ data }) => {
+  const years = {};
+  data.allMarkdownRemark.edges.forEach(({ node }) => {
+    if (!years[node.frontmatter.year]) years[node.frontmatter.year] = [];
+    years[node.frontmatter.year].push(node);
+  });
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO />
+  return (
+    <Layout>
+      <SEO />
 
-    <h1>Home</h1>
+      <h1>Home</h1>
 
-    <p>
-      A corner of the cosmos for Jeremy Keeler, software engineer, geologist, and nature enthusiast. Prone to thoughts,
-      ramblings, musings, and other writings.
-    </p>
+      <p>
+        A corner of the cosmos for Jeremy Keeler, software engineer, geologist, and nature enthusiast. Prone to
+        thoughts, ramblings, musings, and other writings. Topics: whatever is on my mind.
+      </p>
 
-    <h4 className={styles.year}>2019</h4>
+      {Object.keys(years)
+        .sort()
+        .reverse()
+        .map(year => (
+          <YearList key={year} year={year} nodes={years[year]} />
+        ))}
 
-    <ul className={styles.postList}>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <li key={node.frontmatter.path}>
-          <Link to={node.frontmatter.path}>
-            {node.frontmatter.date} - {node.frontmatter.title}
-          </Link>
-        </li>
-      ))}
-    </ul>
-
-    <p><a href="/rss.xml">RSS Feed</a></p>
-  </Layout>
-);
+      <p>
+        <a href="/rss.xml">RSS Feed</a>
+      </p>
+    </Layout>
+  );
+};
 
 export default IndexPage;
 
@@ -40,14 +44,17 @@ export const query = graphql`
     allMarkdownRemark(
       limit: 1000
       filter: { frontmatter: { draft: { ne: true } } }
-      sort: { fields: [frontmatter___date], order: ASC }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
+          fields {
+            url
+          }
           frontmatter {
-            path
             title
             date(formatString: "MMMM DD")
+            year: date(formatString: "YYYY")
           }
         }
       }

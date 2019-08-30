@@ -1,7 +1,7 @@
 [build]
   base = ""
   publish = "public/"
-  command = "gatsby build"
+  command = "yarn build"
 
 [[redirects]]
   from = "https://kind-agnesi-dd5ea1.netlify.com/*"

@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/371d03a4-f192-480f-a5da-0e551bea79da/deploy-status)](https://app.netlify.com/sites/kind-agnesi-dd5ea1/deploys)
 
-keeler.dev is made using [gatsby](https://github.com/gatsbyjs/gatsby) and is deployed using [netlify](https://www.netlify.com/). Development uses the standard gatsby flow. Gatsby docs can be found [here for more information](https://www.gatsbyjs.org/docs/).
+[keeler.dev](https://keeler.dev) is made using [gatsby](https://github.com/gatsbyjs/gatsby) and is deployed using [netlify](https://www.netlify.com/). Development uses the standard gatsby flow. Gatsby docs can be found [here for more information](https://www.gatsbyjs.org/docs/).
 
 ## Development
 

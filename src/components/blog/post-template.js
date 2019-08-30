@@ -25,12 +25,14 @@ function Template({ data }) {
 
 export const pageQuery = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(fields: { url: { eq: $path } }) {
       html
+      fields {
+        url
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         description
-        path
         title
       }
     }

@@ -23,9 +23,12 @@ function createPages({ actions, graphql }) {
       ) {
         edges {
           node {
+            fields {
+              url
+            }
             frontmatter {
               draft
-              path
+              date
             }
           }
         }
@@ -40,7 +43,7 @@ function createPages({ actions, graphql }) {
       if ((CONTEXT == 'production' && !node.frontmatter.draft) ||
            CONTEXT == 'development') {
         createPage({
-          path: node.frontmatter.path,
+          path: node.fields.url,
           component: postTemplate,
           context: {},
         });
@@ -50,3 +53,15 @@ function createPages({ actions, graphql }) {
 }
 
 exports.createPages = createPages;
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  if (node.internal.type === `MarkdownRemark`) {
+    const { createNodeField } = actions
+    const url = '/posts/' + node.frontmatter.path;
+    createNodeField({
+      node,
+      name: `url`,
+      value: url,
+    })
+  }
+};

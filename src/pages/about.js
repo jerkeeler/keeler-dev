@@ -18,41 +18,25 @@ const About = ({ data }) => (
     <Img fluid={data.image.childImageSharp.fluid} className={styles.aboutImg} alt="Jeremy's Face" />
 
     <p>
-      I'm Jeremy Keeler, currently a Software Engineer at{' '}
-      <a rel="noopener noreferrer" target="_blank" href="https://www.affirm.com/">
-        Affirm
-      </a>
-      , on the Bank Engineering team. I help design, develop, and deliver various data pipelines for our investors and
-      captial markets teams. We use Python on the backend and React on the frontend. Previously I was an Analyst and
-      Fullstack Engineer at{' '}
-      <a rel="noopener noreferrer" target="_blank" href="https://www.goldmansachs.com/">
-        Goldman Sachs
-      </a>
-      , working in Private Wealth Management. In May 2016 I graduated from the{' '}
-      <a rel="noopener noreferrer" target="_blank" href="https://www.udel.edu/">
-        University of Delaware
-      </a>{' '}
-      with two Bachelor of Science degrees, in Geological Sciences and Environmental Sciences, and a minor in Computer
-      Science
+      I'm Jeremy Keeler, currently a Software Engineer at <a href="https://www.affirm.com/">Affirm</a>, on the Bank
+      Engineering team. I help design, develop, and deliver various data pipelines for our investors and captial markets
+      teams. We use Python on the backend and React on the frontend. Previously I was an Analyst and Fullstack Engineer
+      at <a href="https://www.goldmansachs.com/">Goldman Sachs</a>, working in Private Wealth Management. In May 2016 I
+      graduated from the <a href="https://www.udel.edu/">University of Delaware</a> with two Bachelor of Science
+      degrees, in Geological Sciences and Environmental Sciences, and a minor in Computer Science
     </p>
 
     <p>
       While I am currently doing computer science, I also have a love for all things nature. During college, under the
-      direction of{' '}
-      <a rel="noopener noreferrer" target="_blank" href="http://www.ceoe.udel.edu/our-people/profiles/pizzuto">
-        Dr. James Pizzuto
-      </a>
-      , I combined my computer science and geological sciences knowledge and created a fluvival sediment transport model
-      that explicitly took into account long term storage of suspended sediment. I was fortunate enough to present{' '}
+      direction of <a href="http://www.ceoe.udel.edu/our-people/profiles/pizzuto">Dr. James Pizzuto</a>, I combined my
+      computer science and geological sciences knowledge and created a fluvival sediment transport model that explicitly
+      took into account long term storage of suspended sediment. I was fortunate enough to present{' '}
       <a target="_blank" href="/Keeler_agu_poster_FINAL.png">
         work
       </a>{' '}
       at the AGU Fall Conference in December 2015. This work also contributed to a{' '}
-      <a rel="noopener noreferrer" target="_blank" href="http://geology.gsapubs.org/content/45/2/151.abstract">
-        recent paper
-      </a>
-      , that I am co-author on, titled, "Storage Filters Upland Suspended Sediment Signals Delivered from Watersheds" by
-      Dr. James Pizzuto.
+      <a href="http://geology.gsapubs.org/content/45/2/151.abstract">recent paper</a>, that I am co-author on, titled,
+      "Storage Filters Upland Suspended Sediment Signals Delivered from Watersheds" by Dr. James Pizzuto.
     </p>
 
     <p>

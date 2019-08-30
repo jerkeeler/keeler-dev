@@ -11,33 +11,23 @@ const Now = () => (
       description="Jeremy's now page. What he is up to NOW. Music he's listening to, what he's doing, what books he's reading."
     />
 
-    <h1>Now</h1>
+    <h1>Now.</h1>
 
     <p>
-      This is my{' '}
-      <a target="_blank" rel="noopener noreferrer" href="https://nownownow.com/">
-        now page
-      </a>
-      .
+      What is a <a href="https://nownownow.com/">now page</a>?
     </p>
 
-    <h3>JMT Prep</h3>
+    <h3>JMT</h3>
 
     <p>
-      I'm currently planning on doing a two week segment of the John Muir Trail with my brother (more info in various{' '}
-      <Link to="/">blog posts</Link>) from August 4th to August 16th. In order to prepare I've been ordering new
-      supplies, working out more, and eating healthier (harder, better, faster, stronger).
+      I just finished doing ~123 miles of the <a href="https://www.pcta.org/discover-the-trail/john-muir-trail/">John Muir Trail</a>! It was one of the best experiences of my life and I can't wait to plan and hike my next long trail. Read more about my experience in <Link to="/posts/jmt-reflection">blog post</Link>.
     </p>
 
     <h3>Work</h3>
 
     <p>
-      Living it up at{' '}
-      <a target="_blank" rel="noopener noreferrer" href="https://www.affirm.com/">
-        Affirm
-      </a>{' '}
-      in NYC. Software engineer doing software engineer things. 9-5 most days, but every other week I still find I'm
-      doing those late night startup hours.
+      Living it up at <a href="https://www.affirm.com/">Affirm</a> in NYC. Software engineer doing software engineer
+      things. 9-6 most days, but every other week I still find I'm doing those late night startup hours.
     </p>
 
     <h3>Music</h3>
@@ -55,11 +45,19 @@ const Now = () => (
 
     <p>
       I'm still finishing up the fantastic{' '}
-      <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/The_Wheel_of_Time">
-        Wheel of Time Series
-      </a>{' '}
-      by Robert Jordan. I'm currently part way through the 11th book! I'm so excited about these few concluding books!
+      <a href="https://en.wikipedia.org/wiki/The_Wheel_of_Time">Wheel of Time Series</a> by Robert Jordan. I'm currently
+      part way through the final book!
     </p>
+
+    <h3>Games</h3>
+
+    <p>I'm currently playing the following video games...</p>
+
+    <ul>
+      <li>Skyrim (Switch)</li>
+      <li>Stardew Valley (Switch)</li>
+      <li>Age of Empires II (PC)</li>
+    </ul>
   </Layout>
 );
 
