@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PostListItem from './post-list-item';
+import PostListItem from '../PostListItem';
 
 import styles from './year-list.module.css';
 

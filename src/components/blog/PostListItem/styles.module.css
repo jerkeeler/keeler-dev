@@ -1,0 +1,8 @@
+.tags {
+  margin: 0;
+  line-height: 0.7;
+}
+
+.tag {
+  font-size: var(--text-small);
+}
