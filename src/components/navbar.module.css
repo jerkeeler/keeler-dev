@@ -1,3 +1,8 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+}
+
 .nav-list {
   list-style: none;
   margin: 0;
@@ -12,33 +17,44 @@
   border-bottom: 2px solid rgb(36, 209, 248);
 }
 
-@media(max-width: 900px) {
+@media(max-width: 1024px) {  /* var(--tablet), can't use variable in media queries though... */
+  .navbar {
+    flex-direction: row;
+    margin-bottom: var(--spacing-medium)
+  }
+
   .nav-list {
-      margin-bottom: 20px;
-      padding: 0;
+    margin-bottom: var(--spacing-large);
+    padding: 0;
   }
 
   .nav-item {
-      display: inline-block;
-      margin-bottom: 10px;
-      margin-right: 8px;
+    display: inline-block;
+    margin-bottom: var(--spacing-small);
+    margin-right: 8px;
   }
 
   .nav-item:last-child {
-      margin-right: 0;
+    margin-right: 0;
+  }
+
+  .logoLink {
+    margin-left: 0 !important;
+    margin-right: var(--spacing-small);
+    padding-top: var(--spacing-x-small)
   }
 }
 
 .logo {
-    max-width: 50px;
+  width: 50px;
 }
 
 .logoLink {
-    border-bottom: none;
-    margin-bottom: 7px;
-    margin-left: var(--spacing-small);
+  border-bottom: none;
+  margin-left: var(--spacing-small);
 }
 
 .logoLink:hover {
-    border-bottom: none;
+  border-bottom: none;
+  opacity: 0.8;
 }

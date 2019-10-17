@@ -5,7 +5,7 @@ import styles from './navbar.module.css';
 import image from '../images/minimal_j.svg';
 
 const Navbar = () => (
-  <nav>
+  <nav className={styles.navbar}>
     <Link to="/" className={styles.logoLink}>
       <img src={image} alt="A geometric, minimal version of the J character" className={styles.logo} />
     </Link>
