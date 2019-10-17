@@ -87,7 +87,6 @@ async function createTagPages(graphql, createPage, reporter) {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     node.frontmatter.tags.forEach(tag => tags.add(tag));
   });
-  console.log(111111, tags);
   tags.forEach(tag => {
     createPage({
       path: `/tags/${tag}`,
