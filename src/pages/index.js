@@ -3,14 +3,10 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import YearList from '../components/blog/year-list';
+import BlogPost from '../components/blog/BlogPost';
 
 const IndexPage = ({ data }) => {
-  const years = {};
-  data.allMarkdownRemark.edges.forEach(({ node }) => {
-    if (!years[node.frontmatter.year]) years[node.frontmatter.year] = [];
-    years[node.frontmatter.year].push(node);
-  });
+  const posts = data.allMarkdownRemark.edges.map(edge => edge.node);
 
   return (
     <Layout>
@@ -23,13 +19,9 @@ const IndexPage = ({ data }) => {
         thoughts, ramblings, musings, and other writings. Topics: whatever is on my mind.
       </p>
 
-      {Object.keys(years)
-        .sort()
-        .reverse()
-        .map(year => (
-          <YearList key={year} year={year} nodes={years[year]} />
-        ))}
-
+      {posts.map(node => (
+        <BlogPost post={node} key={node.fields.url} />
+      ))}
       <p>
         <a href="/rss.xml">RSS Feed</a>
       </p>
@@ -48,6 +40,7 @@ export const query = graphql`
     ) {
       edges {
         node {
+          html
           fields {
             url
           }
@@ -55,6 +48,7 @@ export const query = graphql`
             title
             date(formatString: "MMMM DD")
             year: date(formatString: "YYYY")
+            tags
           }
         }
       }

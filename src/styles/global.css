@@ -1,4 +1,74 @@
 /* ====================================== *
+ * | VARIABLES                          | *
+ * ====================================== */
+:root {
+  --black: #000;
+  --white: #FFF;
+  --black-00: #FAFAFA;
+  --black-05: #F8F8F8;
+  --black-10: #F6F6F6;
+  --black-20: #EEE;
+  --black-30: #E2E2E2;
+  --black-40: #D1D1D1;
+  --black-50: #BABABA;
+  --black-60: #9B9B9B;
+  --black-70: #757575;
+  --black-80: #484848;
+  --black-85: #2d2d2d;
+  --black-90: #1A1A1A;
+  --green-00: #F2FFF5;
+  --green-05: #B4F9C2;
+  --green-10: #79F48F;
+  --green-20: #26D738;
+  --green-30: #0AA002;
+  --green-40: #135200;
+  --red-00: #FFF2F2;
+  --red-05: #F9B4B4;
+  --red-10: #F47979;
+  --red-20: #D72626;
+  --red-30: #A00202;
+  --red-40: #520000;
+  --yellow-00: #FFFDF2;
+  --yellow-05: #F9EEB0;
+  --yellow-10: #F3E171;
+  --yellow-20: #D6BD1B;
+  --yellow-30: #9C8B00;
+  --yellow-40: #4A4400;
+  --blue-00: rgb(36, 209, 248);
+  --blue-20: rgb(27, 150, 180);
+  --blue-20-05: rgba(27, 150, 180, 0.55);
+
+  /* SIZING */
+  --spacing-x-small: 5px;
+  --spacing-small: 10px;
+  --spacing-medium: 16px;
+  --spacing-large: 20px;
+
+  --mobile: 375px;
+  --tablet: 1024px;
+
+  /* FONTS */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  --monospace-font-fmaily: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+  --text-x-small: 10px;
+  --text-small: 12px;
+  --text-medium: 16px;
+  --text-large: 18px;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --weight-extra-bold: 900;
+
+  /* STYLING */
+  --radius: 3px;
+}
+
+/* ====================================== *
  * | OVERALL STYLES                     | *
  * ====================================== */
  html {
@@ -6,25 +76,25 @@
 }
 
 body {
-  background-color: #fff;
-  color: #4c4c4c;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: var(--white);
+  color: var(--black-80);
+  font-family: var(--font-family);
   font-size: 1.2em;
   min-height: 100vh;
 }
 
 a {
-  border-bottom: 1px solid rgb(36, 209, 248);
-  color: #4c4c4c;
+  border-bottom: 1px solid var(--blue-00);
+  color: var(--black-80);
   text-decoration: none;
 }
 
 a:active, a:visited, a:link, a:focus, a:active {
-  color: #4c4c4c;
+  color: var(--black-80);
 }
 
 a:hover {
-  border-bottom: 2px dashed rgb(36, 209, 248);
+  border-bottom: 2px dashed var(--blue-00);
 }
 
 h1:first-child {
@@ -33,7 +103,7 @@ h1:first-child {
 
 hr {
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--black-50);
   width: 75%;
 }
 
@@ -63,27 +133,27 @@ textarea {
 }
 
 .btn {
-  border-radius: 5px;
-  font-weight: 700;
-  padding: 10px 15px;
+  border-radius: var(--radius);
+  font-weight: var(--weight-bold);
+  padding: var(--spacing-small) var(--spacing-medium);
 }
 
 .btn-primary {
-  background-color: rgb(36, 209, 248);
+  background-color: var(--blue-00);
   border: none;
-  color: #fff;
+  color: var(--white);
 }
 
 .btn-primary:hover {
-  background-color: rgb(27, 150, 180);
+  background-color: var(--blue-20);
 }
 
 .btn-primary:disabled {
-  background-color: rgba(27, 150, 180, 0.55);
+  background-color: var(--blue-20-05);
 }
 
 .btn-primary:disabled:hover {
-  background-color: rgba(27, 150, 180, 0.55);
+  background-color: var(--blue-20-05);
 }
 
 .btn:hover {
@@ -95,35 +165,65 @@ textarea {
 }
 
 .form {
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-large);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-large);
 }
 
 .form-group > label {
-  margin-bottom: 5px;
+  margin-bottom: var(--spacing-x-small);
 }
 
 .form-field {
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 10px;
+  border-radius: var(--radius);
+  border: 1px solid var(--black-40);
+  padding: var(--spacing-small);
 }
 
 .form-field::placeholder {
-  color: #636363;
+  color: var(--black-70);
 }
 
 .form-field:focus {
   outline: none;
-  border: 1px solid rgb(36, 209, 248);
-  box-shadow: 0 0 5px rgb(36, 209, 248);
+  border: 1px solid var(--blue-00);
+  box-shadow: 0 0 5px var(--blue-00);
 }
 
 .errorlist > li {
-  color: #df2e35;
+  color: var(--red-20);
+}
+
+.gatsby-resp-image-link {
+  border-bottom: none;
+}
+
+.gatsby-resp-image-link:hover {
+  border-bottom: none;
+}
+
+.task-list-item {
+  list-style: none;
+  margin-left: -13px;
+}
+
+blockquote {
+  border-left: 6px solid rgb(223, 226, 229);
+  color: #777777;
+  margin-left: 0;
+  padding-left: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+td, th {
+  border: 1px solid #000;
+  padding: 5px 15px;
 }

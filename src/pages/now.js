@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -20,7 +19,9 @@ const Now = () => (
     <h3>JMT</h3>
 
     <p>
-      I just finished doing ~123 miles of the <a href="https://www.pcta.org/discover-the-trail/john-muir-trail/">John Muir Trail</a>! It was one of the best experiences of my life and I can't wait to plan and hike my next long trail. Read more about my experience in <Link to="/posts/jmt-reflection">blog post</Link>.
+      I just finished doing ~123 miles of the{' '}
+      <a href="https://www.pcta.org/discover-the-trail/john-muir-trail/">John Muir Trail</a>! It was one of the best
+      experiences of my life and I can't wait to plan and hike my next long trail.
     </p>
 
     <h3>Work</h3>

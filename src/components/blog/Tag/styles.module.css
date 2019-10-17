@@ -1,0 +1,9 @@
+.tag {
+    color: var(--black-70) !important;
+    font-size: var(--text-medium);
+    margin-right: var(--spacing-small);
+}
+
+.tag:last-child {
+    margin-right: 0;
+}

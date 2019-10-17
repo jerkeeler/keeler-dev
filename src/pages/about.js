@@ -11,17 +11,18 @@ const About = ({ data }) => (
   <Layout>
     <SEO
       title="about"
-      description="Jeremy Keeler is a software engineer, geologist, and outdoor enthusiast. He currently works at Affirm, created/maintains aoestats.io on his spare time, and constantly goes backpacking."
+      description="Jeremy Keeler is a senior software engineer, geologist, and outdoor enthusiast. He currently works at Affirm, created/maintains aoestats.io on his spare time, and constantly goes backpacking."
     />
     <h1>About</h1>
 
     <Img fluid={data.image.childImageSharp.fluid} className={styles.aboutImg} alt="Jeremy's Face" />
 
     <p>
-      I'm Jeremy Keeler, currently a Software Engineer at <a href="https://www.affirm.com/">Affirm</a>, on the Bank
-      Engineering team. I help design, develop, and deliver various data pipelines for our investors and captial markets
-      teams. We use Python on the backend and React on the frontend. Previously I was an Analyst and Fullstack Engineer
-      at <a href="https://www.goldmansachs.com/">Goldman Sachs</a>, working in Private Wealth Management. In May 2016 I
+      I'm Jeremy Keeler, currently a Senior Software Engineer at <a href="https://www.affirm.com/">Affirm</a>, on the
+      Bank Engineering team. I help design, develop, and deliver various data pipelines for our investors and captial
+      markets teams. I also focus on internal web applications for use by our business teams. We use Python on the
+      backend and React on the frontend. Previously I was an Analyst and Fullstack Engineer at{' '}
+      <a href="https://www.goldmansachs.com/">Goldman Sachs</a>, working in Private Wealth Management. In May 2016 I
       graduated from the <a href="https://www.udel.edu/">University of Delaware</a> with two Bachelor of Science
       degrees, in Geological Sciences and Environmental Sciences, and a minor in Computer Science
     </p>

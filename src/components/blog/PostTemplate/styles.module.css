@@ -1,0 +1,7 @@
+.postDate {
+    color: var(--black-70);
+}
+
+.postTitle {
+    margin-bottom: var(--spacing-small);
+}

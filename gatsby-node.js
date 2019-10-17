@@ -14,7 +14,7 @@ const {
 function createPages({ actions, graphql }) {
   const { createPage } = actions;
 
-  const postTemplate = path.resolve(`src/components/blog/post-template.js`)
+  const postTemplate = path.resolve(`src/components/blog/PostTemplate/index.js`);
 
   return graphql(`
     {
@@ -40,8 +40,8 @@ function createPages({ actions, graphql }) {
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      if ((CONTEXT == 'production' && !node.frontmatter.draft) ||
-           CONTEXT == 'development') {
+      if ((CONTEXT === 'production' && !node.frontmatter.draft) ||
+           CONTEXT === 'development') {
         createPage({
           path: node.fields.url,
           component: postTemplate,
@@ -56,7 +56,7 @@ exports.createPages = createPages;
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === `MarkdownRemark`) {
-    const { createNodeField } = actions
+    const { createNodeField } = actions;
     const url = '/posts/' + node.frontmatter.path;
     createNodeField({
       node,
