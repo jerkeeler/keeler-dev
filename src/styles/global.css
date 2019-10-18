@@ -43,6 +43,7 @@
   --spacing-small: 10px;
   --spacing-medium: 16px;
   --spacing-large: 20px;
+  --spacing-x-large: 30px;
 
   --mobile: 375px;
   --tablet: 1024px;
@@ -66,6 +67,7 @@
 
   /* STYLING */
   --radius: 3px;
+  --navbar-size: 200px;
 }
 
 /* ====================================== *

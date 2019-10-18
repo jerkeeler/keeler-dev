@@ -6,3 +6,15 @@
 .tag {
   font-size: var(--text-small);
 }
+
+.postList {
+  margin-bottom: var(--spacing-small);
+}
+
+.postList:last-child {
+  margin-bottom: 0;
+}
+
+.link {
+  font-size: var(--text-medium);
+}

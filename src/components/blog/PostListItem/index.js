@@ -6,8 +6,8 @@ import Tag from '../Tag';
 import styles from './styles.module.css';
 
 const PostListItem = ({ node }) => (
-  <li>
-    <Link to={node.fields.url}>
+  <li className={styles.postList}>
+    <Link to={node.fields.url} className={styles.link}>
       {node.frontmatter.date} - {node.frontmatter.title}
     </Link>
     <p className={styles.tags}>

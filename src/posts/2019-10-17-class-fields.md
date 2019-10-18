@@ -3,7 +3,7 @@ path: "react-class-fields"
 date: "2019-10-17"
 title: "React and Javascript Class Fields"
 description: "An introduction to Javascript class fields and why you should use them with React components."
-draft: true
+draft: false
 tags: ["react", "javascript"]
 ---
 

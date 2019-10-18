@@ -45,8 +45,8 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
  /* Inline code */
  :not(pre) > code[class*="language-"] {
-   padding: .1em;
-   border-radius: .3em;
+   padding: var(--spacing-x-small) var(--spacing-x-small);
+   border-radius: var(--radius);
    white-space: normal;
  }
 
