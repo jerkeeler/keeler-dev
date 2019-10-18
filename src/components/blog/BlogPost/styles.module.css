@@ -2,7 +2,7 @@
   border: 1px solid rgba(0,0,0,.1);
   box-shadow: 0 0 8px 0 rgba(0,0,0,.1);
   border-radius: var(--radius);
-  margin-bottom: var(--spacing-small);
+  margin-bottom: var(--spacing-large);
   padding: var(--spacing-small) var(--spacing-large);
 }
 
