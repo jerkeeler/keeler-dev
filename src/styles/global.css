@@ -121,6 +121,13 @@ textarea {
   display: none;
 }
 
+figcaption {
+  font-style: italic;
+  font-size: var(--text-medium);
+  margin-top: var(--spacing-x-small);
+  text-align: center;
+}
+
 
 /* ====================================== *
 * | GENERIC CLASSES                    | *
