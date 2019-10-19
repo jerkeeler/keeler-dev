@@ -8,3 +8,6 @@
   to = "https://keeler.dev/:splat"
   status = 301
   force = true
+
+[context.production]
+  environment = { "GIT_LFS_ENABLED" = true }
