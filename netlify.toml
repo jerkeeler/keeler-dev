@@ -1,7 +1,7 @@
 [build]
   base = ""
   publish = "public/"
-  command = "yarn build:prod"
+  command = "yarn build"
 
 [[redirects]]
   from = "https://kind-agnesi-dd5ea1.netlify.com/*"

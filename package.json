@@ -37,7 +37,6 @@
   "license": "MIT",
   "scripts": {
     "build": "npx gatsby build",
-    "build:prod": "yarn clean && yarn build",
     "develop": "npx gatsby develop",
     "clean": "GLOBIGNORE=*.keep && rm -rf ./public/* && rm -rf ./.cache/*",
     "format": "npx prettier --write src/**/*.{js,jsx}",
