@@ -1,0 +1,14 @@
+
+.morePostsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.morePosts {
+  border-bottom: none;
+}
+
+.morePosts:hover {
+  border-bottom: none;
+}

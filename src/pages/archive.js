@@ -21,6 +21,9 @@ const Archive = ({ data }) => {
         .map(year => (
           <YearList key={year} year={year} nodes={years[year]} />
         ))}
+      <p>
+        <a href="/rss.xml">RSS Feed</a>
+      </p>
     </Layout>
   );
 };

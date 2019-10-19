@@ -236,3 +236,16 @@ td, th {
   border: 1px solid #000;
   padding: 5px 15px;
 }
+
+.embedVideo-iframe {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+@media(max-width: 1024px) {  /* var(--tablet) */
+  .embedVideo-iframe {
+    width: 100%;
+  }
+}
