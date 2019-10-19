@@ -42,7 +42,7 @@ Honestly, there are just too many amazing locales on this hike to list! So here 
 
 ![Trail family at Upper Palisade Lake](../images/jmt/trail_family_palisade_lake.jpg "Our trail family chilling at Upper Palisade Lake.")
 
-![Trail family at Pinchot Pass](../images/jmt/trail_family_top_of_pinchot.JPG "The fam at the top of Pinchot Pass the next day.")
+![Trail family at Pinchot Pass](../images/jmt/trail_family_top_of_pinchot.jpg "The fam at the top of Pinchot Pass the next day.")
 
 ![Rae Lakes](../images/jmt/rae_lakes.jpg "Rae Lakes")
 
