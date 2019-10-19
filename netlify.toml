@@ -13,3 +13,4 @@
   GIT_LFS_ENABLED = "true"
   NODE_VERSION = "12.9.1"
   YARN_VERSION = "1.19.1"
+  NODE_ENV = "production"
