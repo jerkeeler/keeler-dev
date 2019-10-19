@@ -10,4 +10,4 @@
   force = true
 
 [context.production]
-  environment = { "GIT_LFS_ENABLED" = true }
+  environment = { "GIT_LFS_ENABLED" = "true" }
