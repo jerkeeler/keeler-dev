@@ -13,7 +13,7 @@ I had only been to Yosemite once before (for a grueling one night backpacking tr
 
 ![Sunset at VVR](../images/jmt/vvr_sunset.jpg "My first sunset in the Sierra along the JMT at VVR.")
 
-After out first day of hiking we stayed just below Seldon Pass at Marie Lake.
+After our first day of hiking we stayed just below Seldon Pass at Marie Lake.
 
 ![Marie Lake Sunset Panorama](../images/jmt/marie_lake.jpg "My first night on the trail. Just below Seldon Pass at Marie Lake.")
 
