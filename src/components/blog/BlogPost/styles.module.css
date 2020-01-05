@@ -16,5 +16,6 @@
 
 .postDate {
   color: var(--black-70);
-  font-size: var(--text-medium)
+  font-size: var(--text-medium);
+  display: block;
 }

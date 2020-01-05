@@ -27,7 +27,9 @@ const IndexPage = ({ data }) => {
       ))}
 
       <div className={styles.morePostsContainer}>
-      <Link to="/archive" className={styles.morePosts}><button className="btn btn-primary">More Posts</button></Link>
+        <Link to="/archive" className={styles.morePosts}>
+          <button className="btn btn-primary">More Posts</button>
+        </Link>
       </div>
 
       <p>

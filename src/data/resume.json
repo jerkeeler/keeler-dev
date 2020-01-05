@@ -1,0 +1,78 @@
+{
+  "basics": {
+    "name": "Jeremy Keeler",
+    "label": "Senior Software Engineer",
+    "email": "jerkeeler@gmail.com",
+    "website": "https://keeler.dev",
+    "location": {
+      "city": "Hoboken",
+      "region": "New Jersey",
+      "countryCode": "US"
+    }
+  },
+  "work": [
+    {
+      "company": "Affirm",
+      "position": "Senior Software Engineer",
+      "startDate": "2019-09-01",
+      "highlights": [
+        "Leading a team that is creating a web application to display the performance of loan portfolios to Affirm’s internal business users and to perform ad hoc big data analysis; using React, Pyspark, and Flask"
+      ]
+    },
+    {
+      "company": "Affirm",
+      "position": "Software Engineer",
+      "startDate": "2018-06-01",
+      "endDate": "2019-09-01",
+      "highlights": [
+        "Developed big data pipelines to analyze millions of loans daily for financing; used Apache Spark and Python",
+        "Created a monthly data pipeline to collate large data sets on Affirm’s loans to send to Affirm’s backup servicer"
+      ]
+    },
+    {
+      "company": "Goldman Sachs",
+      "position": "Technology Analyst, Software Engineer",
+      "startDate": "2017-08-01",
+      "endDate": "2019-06-01",
+      "highlights": [
+        "Developed the PWM Equities trading platform for Regulation 10b5-1 plans as the lead developer; the application involved an automated order generation UI and service; used AngularJS and Java Spring Boot",
+        "Developed and supported the PWM Structured Note trading platform; used AngularJS, Java, and Slang"
+      ]
+    },
+    {
+      "company": "CultureIQ",
+      "position": "Fullstack Developer",
+      "startDate": "2016-08-01",
+      "endDate": "2017-08-01",
+      "highlights": [
+        "Created and maintained a large scale single-page web application; used AngularJS, Django, and PostgreSQL",
+        "Designed and created frontend statistics tools to help clients quickly analyze their data",
+        "Developed a web application build pipeline for automated deployment; used Webpack and AWS Code Build"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Delaware",
+      "area": "Geological Sciences",
+      "studyType": "Bachelor of Science",
+      "startDate": "2012-09-01",
+      "endDate": "2016-05-01"
+    },
+    {
+      "institution": "University of Delaware",
+      "area": "Environmental Sciences",
+      "studyType": "Bachelor of Science",
+      "startDate": "2012-09-01",
+      "endDate": "2016-05-01"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Storage filters upland suspended sediment signals delivered from watersheds",
+      "publisher": "Geology",
+      "releaseDate": "2017-02-01",
+      "website": "https://doi.org/10.1130/G38170.1"
+    }
+  ]
+}

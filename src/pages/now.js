@@ -16,14 +16,6 @@ const Now = () => (
       What is a <a href="https://nownownow.com/">now page</a>?
     </p>
 
-    <h3>JMT</h3>
-
-    <p>
-      I just finished doing ~123 miles of the{' '}
-      <a href="https://www.pcta.org/discover-the-trail/john-muir-trail/">John Muir Trail</a>! It was one of the best
-      experiences of my life and I can't wait to plan and hike my next long trail.
-    </p>
-
     <h3>Work</h3>
 
     <p>
@@ -38,16 +30,17 @@ const Now = () => (
     <ul>
       <li>Billie Eilish</li>
       <li>Zelda 25th Anniversary Soundtrack</li>
-      <li>MisterWives</li>
-      <li>Can't Stop Won't Stop</li>
+      <li>
+        <a href="https://open.spotify.com/playlist/5A4KncYhd95iKPaIYnjl5B?si=SzjzWMupQmu-S9AKtr0INQ">Zelda and Chill</a>{' '}
+        lofi remixes of Zelda soundtrack
+      </li>
     </ul>
 
     <h3>Books</h3>
 
     <p>
-      I'm still finishing up the fantastic{' '}
-      <a href="https://en.wikipedia.org/wiki/The_Wheel_of_Time">Wheel of Time Series</a> by Robert Jordan. I'm currently
-      part way through the final book!
+      I just finished the fantastic <a href="https://en.wikipedia.org/wiki/The_Wheel_of_Time">Wheel of Time Series</a>{' '}
+      by Robert Jordan. I'm now on to the Expand series!
     </p>
 
     <h3>Games</h3>
@@ -55,9 +48,9 @@ const Now = () => (
     <p>I'm currently playing the following video games...</p>
 
     <ul>
-      <li>Skyrim (Switch)</li>
-      <li>Stardew Valley (Switch)</li>
+      <li>Civilization 6 (Switch)</li>
       <li>Age of Empires II (PC)</li>
+      <li>Skyrim (Switch)</li>
     </ul>
   </Layout>
 );

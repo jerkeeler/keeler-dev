@@ -9,8 +9,8 @@ const BlogPost = ({ post }) => (
   <article key={post.fields.url} className={styles.blogPost}>
     <Link to={post.fields.url}><h3 className={styles.postTitle}>{post.frontmatter.title}</h3></Link>
     <span className={styles.postDate}>{post.frontmatter.date}</span>
-    <div dangerouslySetInnerHTML={{ __html: post.html }} />
     {post.frontmatter.tags.map(tag => <Tag tag={tag} />)}
+    <div dangerouslySetInnerHTML={{ __html: post.html }} />
   </article>
 );
 

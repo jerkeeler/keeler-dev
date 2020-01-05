@@ -1,5 +1,6 @@
 .postDate {
     color: var(--black-70);
+    display: block;
 }
 
 .postTitle {

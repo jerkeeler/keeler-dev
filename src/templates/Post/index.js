@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
+import Tag from '../../components/blog/Tag';
 
 import styles from './styles.module.css';
 
@@ -16,6 +17,7 @@ function Template({ data }) {
       <article>
         <h1 className={styles.postTitle}>{frontmatter.title}</h1>
         <span className={styles.postDate}>{frontmatter.date}</span>
+        {frontmatter.tags.map(tag => <Tag tag={tag} />)}
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
     </Layout>
@@ -33,6 +35,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         title
+        tags
       }
     }
   }
