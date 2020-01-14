@@ -1,0 +1,85 @@
+.item {
+  display: grid;
+  grid-template-columns: 50% 5px 50%;
+  margin: 0 0;
+}
+
+.left {
+  grid-template-areas: "content center date";
+}
+
+.left > .content {
+  text-align: right;
+}
+
+.right {
+  grid-template-areas: "date center content";
+}
+
+.right > .date {
+  text-align: right;
+}
+
+.center {
+  grid-area: center;
+}
+
+.content {
+  grid-area: content;
+}
+
+.date {
+  grid-area: date;
+}
+
+.item:first-child > .center {
+  border-radius: 5px 5px 0 0;
+}
+
+.content, .date {
+  padding: 30px 10px;
+}
+
+.center {
+  /*display: inline-block;*/
+  display: grid;
+  grid-template-columns: 100%;
+  background-color: var(--black-30);
+  width: 5px;
+}
+
+.sphere {
+  display: block;
+  border-radius: 50%;
+  background-color: var(--blue-00);
+  position: relative;
+  top: calc(50% - 6px);
+  left: calc(-50% - 1px);
+  width: 12px;
+  height: 12px;
+}
+
+
+@media(max-width: 1024px) {
+  .item {
+    grid-template-columns: 5px 100%;
+    grid-template-areas: "center date"
+                         "center content";
+  }
+
+  .date, .content {
+    padding: 0 20px;
+  }
+
+  .left > .content, .right > .date {
+    text-align: left;
+  }
+
+  .center {
+    margin: -20px 0;
+  }
+
+  .item {
+    padding: 20px 0;
+  }
+}

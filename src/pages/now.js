@@ -40,7 +40,7 @@ const Now = () => (
 
     <p>
       I just finished the fantastic <a href="https://en.wikipedia.org/wiki/The_Wheel_of_Time">Wheel of Time Series</a>{' '}
-      by Robert Jordan. I'm now on to the Expand series!
+      by Robert Jordan. I'm now on to the Expanse series!
     </p>
 
     <h3>Games</h3>

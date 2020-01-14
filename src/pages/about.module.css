@@ -1,13 +1,23 @@
 .about-img {
   border-radius: 50%;
-  float: left;
-  min-width: 200px;
+  max-width: 200px;
   margin: 20px 30px;
 }
 
+.resumeTitle {
+  text-align: center;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
 @media (max-width: 600px) {
+  .about {
+    display: block;
+  }
   .about-img {
-      float: none;
       margin: 0 auto;
   }
 }

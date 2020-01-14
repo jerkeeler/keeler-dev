@@ -11,7 +11,7 @@ In August 2019 I was fortunate enough to traipse around the wilderness for 2 wee
 
 I had only been to Yosemite once before (for a grueling one night backpacking trip up the [Snow Creek Trail to Yosemite Falls](https://www.alltrails.com/trail/us/california/upper-yosemite-falls-north-dome-indian-rock-snow-creek)) so just driving up to Vermillion Valley Resort (VVR) and VVR itself were absolutely stunning.
 
-![Sunset at VVR](../images/jmt/vvr_sunset.jpg "My first sunset in the Sierra along the JMT at VVR.")
+![Sunset at VVR](../images/jmt/vvr_sunset.jpg "My first sunset in the Sierra Nevada along the JMT at VVR.")
 
 After our first day of hiking we stayed just below Seldon Pass at Marie Lake.
 

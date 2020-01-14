@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Resume from '../components/Resume';
 
 import styles from './about.module.css';
 
@@ -15,37 +16,38 @@ const About = ({ data }) => (
     />
     <h1>About</h1>
 
-    <Img fluid={data.image.childImageSharp.fluid} className={styles.aboutImg} alt="Jeremy's Face" />
+    <div className={styles.about}>
+      <Img fluid={data.image.childImageSharp.fluid} className={styles.aboutImg} alt="Jeremy's Face" />
 
-    <p>
-      I'm Jeremy Keeler, currently a Senior Software Engineer at <a href="https://www.affirm.com/">Affirm</a>, on the
-      Bank Engineering team. I help design, develop, and deliver various data pipelines for our investors and captial
-      markets teams. I also focus on internal web applications for use by our business teams. We use Python on the
-      backend and React on the frontend. Previously I was an Analyst and Fullstack Engineer at{' '}
-      <a href="https://www.goldmansachs.com/">Goldman Sachs</a>, working in Private Wealth Management. In May 2016 I
-      graduated from the <a href="https://www.udel.edu/">University of Delaware</a> with two Bachelor of Science
-      degrees, in Geological Sciences and Environmental Sciences, and a minor in Computer Science
-    </p>
+      <p>
+        I'm Jeremy Keeler, currently a Senior Software Engineer at <a href="https://www.affirm.com/">Affirm</a> on the
+        Bank Engineering team. I help design, develop, and deliver various data pipelines for our investors and captial
+        markets teams. I also focus on internal web applications for use by our business teams.
+      </p>
+    </div>
 
-    <p>
-      While I am currently doing computer science, I also have a love for all things nature. During college, under the
-      direction of <a href="http://www.ceoe.udel.edu/our-people/profiles/pizzuto">Dr. James Pizzuto</a>, I combined my
-      computer science and geological sciences knowledge and created a fluvival sediment transport model that explicitly
-      took into account long term storage of suspended sediment. I was fortunate enough to present{' '}
-      <a target="_blank" href="/Keeler_agu_poster_FINAL.png">
-        work
-      </a>{' '}
-      at the AGU Fall Conference in December 2015. This work also contributed to a{' '}
-      <a href="http://geology.gsapubs.org/content/45/2/151.abstract">recent paper</a>, that I am co-author on, titled,
-      "Storage Filters Upland Suspended Sediment Signals Delivered from Watersheds" by Dr. James Pizzuto.
-    </p>
+    {/*<p>*/}
+    {/*  While I am currently doing computer science, I also have a love for all things nature. During college, under the*/}
+    {/*  direction of <a href="http://www.ceoe.udel.edu/our-people/profiles/pizzuto">Dr. James Pizzuto</a>, I combined my*/}
+    {/*  computer science and geological sciences knowledge and created a fluvival sediment transport model that explicitly*/}
+    {/*  took into account long term storage of suspended sediment. I was fortunate enough to present my{' '}*/}
+    {/*  <a target="_blank" href="/Keeler_agu_poster_FINAL.png">*/}
+    {/*    work*/}
+    {/*  </a>{' '}*/}
+    {/*  at the AGU Fall Conference in December 2015. This work also contributed to a{' '}*/}
+    {/*  <a href="http://geology.gsapubw.org/content/45/2/151.abstract">paper</a>, that I am co-author on, titled,*/}
+    {/*  <em>"Storage filters upland suspended sediment signals delivered from watersheds"</em>.*/}
+    {/*</p>*/}
 
-    <p>
-      In the future, I hope to continue my work as a Software Engineer while maintaining my interest in the outdoors by
-      going on weekend excursions and exploring nature. Down the line I anticipate going to graduate school to receive a
-      master's degree, but in what field, I am not certain. I love learning new things, experimenting, and I hope to
-      learn as much as possible as I progress through life.
-    </p>
+    {/*<p>*/}
+    {/*  In the future, I hope to continue my work as a Software Engineer while maintaining my interest in the outdoors by*/}
+    {/*  going on weekend excursions and exploring nature. Down the line I anticipate going to graduate school to receive a*/}
+    {/*  doctorate. I love learning new things, experimenting, and I hope to learn as much as possible as I progress*/}
+    {/*  through life.*/}
+    {/*</p>*/}
+
+    <h3 className={styles.resumeTitle}>My Timeline</h3>
+    <Resume />
   </Layout>
 );
 
