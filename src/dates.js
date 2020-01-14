@@ -16,5 +16,5 @@ const MONTHS = [
 export const formatDate = (dateStr) => {
   if (!dateStr) return null;
   const date = new Date(dateStr);
-  return `${MONTHS[date.getUTCMonth()]} ${date.getUTCDate()}, ${date.getUTCFullYear()}`;
+  return `${MONTHS[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
 };
