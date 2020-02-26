@@ -46,7 +46,7 @@ const About = ({ data }) => (
     {/*  through life.*/}
     {/*</p>*/}
 
-    <h3 className={styles.resumeTitle}>My Timeline</h3>
+    {/*<h4 className={styles.resumeTitle}>Timeline</h4>*/}
     <Resume />
   </Layout>
 );

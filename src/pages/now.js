@@ -28,8 +28,7 @@ const Now = () => (
     <p>Listening to...</p>
 
     <ul>
-      <li>Billie Eilish</li>
-      <li>Zelda 25th Anniversary Soundtrack</li>
+      <li>Low fi focus mixes on Spotify</li>
       <li>
         <a href="https://open.spotify.com/playlist/5A4KncYhd95iKPaIYnjl5B?si=SzjzWMupQmu-S9AKtr0INQ">Zelda and Chill</a>{' '}
         lofi remixes of Zelda soundtrack
@@ -39,8 +38,7 @@ const Now = () => (
     <h3>Books</h3>
 
     <p>
-      I just finished the fantastic <a href="https://en.wikipedia.org/wiki/The_Wheel_of_Time">Wheel of Time Series</a>{' '}
-      by Robert Jordan. I'm now on to the Expanse series!
+        I'm currently reading <a href="https://www.amazon.com/Leviathan-Wakes-Expanse-Book-1-ebook/dp/B0047Y171G">The Expanse</a> and <a href="https://www.amazon.com/Annals-Former-World-John-McPhee/dp/0374518734">Annals of the Former World</a>
     </p>
 
     <h3>Games</h3>
@@ -48,9 +46,8 @@ const Now = () => (
     <p>I'm currently playing the following video games...</p>
 
     <ul>
-      <li>Civilization 6 (Switch)</li>
       <li>Age of Empires II (PC)</li>
-      <li>Skyrim (Switch)</li>
+      <li>Stardew Valley</li>
     </ul>
   </Layout>
 );
