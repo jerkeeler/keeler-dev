@@ -38,7 +38,9 @@ const Now = () => (
     <h3>Books</h3>
 
     <p>
-        I'm currently reading <a href="https://www.amazon.com/Leviathan-Wakes-Expanse-Book-1-ebook/dp/B0047Y171G">The Expanse</a> and <a href="https://www.amazon.com/Annals-Former-World-John-McPhee/dp/0374518734">Annals of the Former World</a>
+      I'm currently reading{' '}
+      <a href="https://www.amazon.com/Leviathan-Wakes-Expanse-Book-1-ebook/dp/B0047Y171G">The Expanse</a> and{' '}
+      <a href="https://www.amazon.com/Annals-Former-World-John-McPhee/dp/0374518734">Annals of the Former World</a>
     </p>
 
     <h3>Games</h3>
