@@ -1,0 +1,29 @@
+import React from 'react';
+
+import { formatDate } from '../../dates';
+import Item from './Item';
+
+const Date = ({ data }) => (
+  <span>
+    {formatDate(data.startDate)} - {formatDate(data.endDate)}
+  </span>
+);
+
+const Content = ({ data }) => (
+  <>
+    <span>
+      {data.studyType} {data.area}
+    </span>
+    <br />
+    <span className="italic">{data.institution}</span>
+  </>
+);
+
+const Education = ({ idx, data }) => {
+  const content = <Content data={data} />;
+  const date = <Date data={data} />;
+  const side = idx % 2 === 0 ? 'right' : 'left';
+  return <Item date={date} content={content} side={side} />;
+};
+
+export default Education;

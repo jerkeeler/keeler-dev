@@ -1,0 +1,125 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+
+@tailwind utilities;
+
+/* purgecss start ignore */
+body {
+  @apply text-gray-900;
+}
+
+.heading-1 {
+  @apply text-4xl mb-6 font-bold;
+}
+
+.heading-2 {
+  @apply text-3xl mb-4 font-bold;
+}
+
+.heading-3 {
+  @apply text-2xl my-4 font-bold;
+}
+
+.paragraph {
+  @apply my-4;
+}
+
+.link {
+  @apply border-solid border-b-2 border-primary;
+
+  &:hover {
+    @apply border-dashed;
+  }
+}
+
+.horizontal-rule {
+  @apply w-9/12;
+  margin: 1rem auto;
+}
+
+.unordered-list {
+  @apply pl-10 list-disc my-4;
+}
+
+.ordered-list {
+  @apply pl-10 list-decimal my-4;
+}
+
+.footer-item {
+  &:after {
+    @apply ml-4;
+    content: '|'
+  }
+
+  &:last-child:after {
+    content: ''
+  }
+}
+
+.markdown {
+  & h1 {
+    @apply heading-1;
+  }
+
+  & h2 {
+    @apply heading-2;
+  }
+
+  & h3 {
+    @apply heading-3;
+  }
+
+  & p {
+    @apply paragraph;
+  }
+
+  & ul {
+    @apply unordered-list;
+  }
+
+  & ol {
+    @apply ordered-list;
+  }
+
+  & a {
+    @apply link;
+
+    &:hover {
+      @apply border-dashed;
+    }
+  }
+
+  & hr {
+    @apply horizontal-rule;
+  }
+
+  & figcaption {
+    @apply italic text-center mt-1 text-sm;
+  }
+
+  & blockquote {
+    @apply pl-6 text-gray-700 border-l-8 border-solid border-gray-200;
+  }
+
+  & table {
+    @apply border-collapse border border-solid border-black;
+  }
+
+  & td, & th {
+    @apply border border-solid border-black py-2 px-4;
+  }
+
+  & .embedVideo-iframe {
+    @apply block relative my-0 mx-auto;
+    max-width: 600px;
+  }
+}
+
+@media(max-width: 1024px) {  /* var(--tablet) */
+  .markdown > .embedVideo-iframe {
+    @apply w-full;
+  }
+}
+/* purgecss end ignore */
