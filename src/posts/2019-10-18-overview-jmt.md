@@ -3,9 +3,7 @@ path: "jmt-overview"
 date: "2019-10-18"
 title: "John Muir Trail Recap"
 description: "An overview of Jeremy's hike along the John Muir Trail in August 2019."
-draft: false
 tags: ["jmt", "backpacking", "hiking"]
-short: false
 ---
 
 In August 2019 I was fortunate enough to traipse around the wilderness for 2 weeks hiking a 123 mile portion of the [John Muir Trail](https://en.wikipedia.org/wiki/John_Muir_Trail). It was an amazing experience. I will have more follow up posts talking about my gear, our itinerary, etc... but for now, enjoy some photos from my trip and an overview of my favorite spots.

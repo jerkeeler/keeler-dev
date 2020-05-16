@@ -24,6 +24,10 @@ body {
 
 .paragraph {
   @apply my-4;
+
+  &:first-child {
+    @apply mt-0;
+  }
 }
 
 .link {

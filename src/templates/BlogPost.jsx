@@ -28,6 +28,7 @@ export const pageQuery = graphql`
         url
       }
       frontmatter {
+        path
         date(formatString: "MMMM DD, YYYY")
         description
         title

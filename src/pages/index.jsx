@@ -39,6 +39,7 @@ const Index = ({ data }) => {
               frontmatter={frontmatter}
               html={frontmatter.short ? html : excerpt}
               url={url}
+              truncated={!frontmatter.short}
             />
           </Item>
         ),
@@ -63,6 +64,7 @@ export const query = graphql`
         }
         html
         frontmatter {
+          path
           title
           date(formatString: "MMMM DD, YYYY")
           year: date(formatString: "YYYY")
