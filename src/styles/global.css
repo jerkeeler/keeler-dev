@@ -116,14 +116,8 @@ body {
   }
 
   & .embedVideo-iframe {
-    @apply block relative my-0 mx-auto;
+    @apply block relative my-0 mx-auto w-full;
     max-width: 600px;
-  }
-}
-
-@media(max-width: 1024px) {  /* var(--tablet) */
-  .markdown > .embedVideo-iframe {
-    @apply w-full;
   }
 }
 /* purgecss end ignore */

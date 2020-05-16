@@ -11,7 +11,7 @@ import LinkButton from '../components/LinkButton';
 const Item = ({ children, url, short }) => (
   <div className="mb-4">
     <HR />
-    {children}
+    <div className="flex justify-center">{children}</div>
     {!short && (
       <div className="flex justify-center mt-6">
         <LinkButton to={url}>Read More</LinkButton>
@@ -58,7 +58,7 @@ export const query = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       nodes {
-        excerpt(format: HTML, pruneLength: 1000)
+        excerpt(format: HTML, pruneLength: 800)
         fields {
           url
         }
