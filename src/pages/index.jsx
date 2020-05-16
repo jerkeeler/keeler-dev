@@ -8,13 +8,15 @@ import Post from '../components/blog/Post';
 import HR from '../components/typography/HR';
 import LinkButton from '../components/LinkButton';
 
-const Item = ({ children, url }) => (
-  <div className="mb-6">
+const Item = ({ children, url, short }) => (
+  <div className="mb-4">
     <HR />
     {children}
-    <div className="flex justify-center mt-6">
-      <LinkButton to={url}>Read More</LinkButton>
-    </div>
+    {!short && (
+      <div className="flex justify-center mt-6">
+        <LinkButton to={url}>Read More</LinkButton>
+      </div>
+    )}
   </div>
 );
 
@@ -31,9 +33,13 @@ const Index = ({ data }) => {
       </p>
       <p className="mt-4">Recent Posts:</p>
       {allMarkdownRemark.nodes.map(
-        ({ excerpt, frontmatter, fields: { url } }) => (
-          <Item key={url} url={url}>
-            <Post frontmatter={frontmatter} html={excerpt} url={url} />
+        ({ excerpt, frontmatter, html, fields: { url } }) => (
+          <Item key={url} url={url} short={frontmatter.short}>
+            <Post
+              frontmatter={frontmatter}
+              html={frontmatter.short ? html : excerpt}
+              url={url}
+            />
           </Item>
         ),
       )}
@@ -51,15 +57,17 @@ export const query = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       nodes {
-        excerpt(format: HTML, pruneLength: 500)
+        excerpt(format: HTML, pruneLength: 1000)
         fields {
           url
         }
+        html
         frontmatter {
           title
           date(formatString: "MMMM DD, YYYY")
           year: date(formatString: "YYYY")
           tags
+          short
         }
       }
     }

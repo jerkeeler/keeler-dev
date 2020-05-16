@@ -5,6 +5,7 @@ title: "React and Javascript Class Fields"
 description: "An introduction to Javascript class fields and why you should use them with React components."
 draft: false
 tags: ["react", "javascript", "programming"]
+short: false
 ---
 
 Class fields aren't a new concept in the javascript world - [the proposal](https://github.com/tc39/proposal-class-fields) was created in May 2017 and is currently a stage 3 (candidate) proposal - but they are starting to achieve adaptation in the latest versions of Chrome and Firefox ([caniuse](https://caniuse.com/#search=class%20fields)).
