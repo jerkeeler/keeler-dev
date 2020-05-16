@@ -4,9 +4,23 @@ import { Link } from 'gatsby';
 import H2 from '../typography/H2';
 import Tag from './Tag';
 import Comments from './Comments';
-import Button from '../typography/Button';
 
-const Post = ({ frontmatter, html, url, truncated }) => {
+const CommentButton = ({ allowComments, onClick, showComments }) => {
+  if (!allowComments) return null;
+
+  return (
+    <div className="flex justify-center mt-6">
+      <button
+        onClick={onClick}
+        className="border border-gray-300 py-4 px-8 shadow-sm"
+      >
+        {showComments ? 'Hide' : 'Show'} Comments
+      </button>
+    </div>
+  );
+};
+
+const Post = ({ frontmatter, html, url, allowComments = true }) => {
   const [showComments, setShowComments] = useState(false);
   return (
     <article className="shadow-lg py-6 px-3 border border-gray-200">
@@ -21,13 +35,11 @@ const Post = ({ frontmatter, html, url, truncated }) => {
       </div>
       <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
 
-      {!truncated && (
-        <div className="flex justify-center">
-          <Button onClick={() => setShowComments(!showComments)}>
-            {showComments ? 'Hide' : 'Show'} Comments
-          </Button>
-        </div>
-      )}
+      <CommentButton
+        allowComments={allowComments}
+        onClick={() => setShowComments(!showComments)}
+        showComments={showComments}
+      />
       {showComments && (
         <Comments
           url={url}

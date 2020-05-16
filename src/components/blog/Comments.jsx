@@ -15,15 +15,17 @@ const Comments = ({ url, identifier, title }) => {
 
   const fullUrl = `${data.site.siteMetadata.siteUrl}${url}`;
   return (
-    <DiscussionEmbed
-      shortname="keeler.dev"
-      config={{
-        url: fullUrl,
-        identifier,
-        title,
-        language: 'en_US',
-      }}
-    />
+    <div className="mt-3">
+      <DiscussionEmbed
+        shortname="keeler-dev"
+        config={{
+          url: fullUrl,
+          identifier,
+          title,
+          language: 'en_US',
+        }}
+      />
+    </div>
   );
 };
 export default Comments;

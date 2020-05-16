@@ -39,7 +39,7 @@ const Index = ({ data }) => {
               frontmatter={frontmatter}
               html={frontmatter.short ? html : excerpt}
               url={url}
-              truncated={!frontmatter.short}
+              allowComments={false}
             />
           </Item>
         ),
