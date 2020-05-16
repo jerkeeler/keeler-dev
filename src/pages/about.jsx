@@ -32,9 +32,9 @@ const About = ({ data }) => (
         <P>
           Jeremy Keeler is currently a Senior Software Engineer at{' '}
           <ExternalLink to="https://www.affirm.com/">Affirm</ExternalLink> on
-          the Capital Engineering team. I help design, develop, and deliver
-          various data pipelines for our investors and captial markets teams. I
-          also focus on internal web applications for use by our business teams.
+          the Capital Engineering team. He helps design, develop, and deliver
+          various data pipelines for Affirm's investors and captial markets
+          teams. He also focuses on internal web applications.
         </P>
 
         <P>
