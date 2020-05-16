@@ -45,7 +45,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npx gatsby build",
+    "build": "NODE_ENV=production npx gatsby build",
     "develop": "npx gatsby develop",
     "format": "npx prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
