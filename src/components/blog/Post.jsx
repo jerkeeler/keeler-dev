@@ -27,8 +27,8 @@ const Post = ({ frontmatter, html, url, allowComments = true }) => {
       <Link to={url} className="hover:cursor-pointer">
         <H2>{frontmatter.title}</H2>
       </Link>
-      <p className="leading-none text-gray-700">{frontmatter.date}</p>
-      <div className="leading-none">
+      <p className="mb-1 text-gray-700">{frontmatter.date}</p>
+      <div className="leading-none flex flex-row flex-wrap">
         {frontmatter.tags.map((tag) => (
           <Tag key={tag} tag={tag} />
         ))}

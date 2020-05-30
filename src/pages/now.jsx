@@ -11,23 +11,22 @@ import List from '../components/typography/List';
 const Now = () => (
   <Layout>
     <SEO
-      title="now"
+      title="Now"
       description="Jeremy's now page. What he is up to NOW. Music he's listening to, what he's doing, what books he's reading."
     />
-    <H1>Now.</H1>
+    <H1>Now</H1>
     <P>
       What is a{' '}
       <ExternalLink to="https://nownownow.com/">now page</ExternalLink>?
     </P>
-    <H3>Work</H3>
+    <H3>Work...</H3>
     <P>
       Living it up at{' '}
       <ExternalLink to="https://affirm.com">Affirm</ExternalLink> in NYC.
       Software engineer doing software engineer things. 9-6 most days, but every
       other week I still find I'm doing those late night startup hours.
     </P>
-    <H3>Music</H3>
-    <P>Listening to...</P>
+    <H3>Music...</H3>
     <List>
       <List.Item>Billie Eilish</List.Item>
       <List.Item>
@@ -38,7 +37,7 @@ const Now = () => (
       </List.Item>
       <List.Item>Lord of the Rings soundtrack</List.Item>
     </List>
-    <H3>Books</H3>
+    <H3>Reading...</H3>
     <P>
       I'm currently reading{' '}
       <ExternalLink to="https://www.amazon.com/Annals-Former-World-John-McPhee/dp/0374518734">
@@ -48,10 +47,11 @@ const Now = () => (
       <ExternalLink to="https://en.wikipedia.org/wiki/John_McPhee">
         John McPhee
       </ExternalLink>
-      .
+      . I've also started reading a LOT of scientific papers related to
+      paleoclimatology in preparation for the Fall, when I start my Ph.D. on the
+      subject.
     </P>
-    <H3>Games</H3>
-    <P>I'm currently playing...</P>
+    <H3>Games...</H3>
     <List>
       <List.Item>
         <ExternalLink to="https://store.steampowered.com/app/221380/Age_of_Empires_II_2013/">

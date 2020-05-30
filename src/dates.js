@@ -18,3 +18,10 @@ export const formatDate = (dateStr) => {
   const date = new Date(dateStr);
   return `${MONTHS[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
 };
+
+export const formatBuildDate = (dateStr) => {
+  const date = new Date(dateStr);
+  return `${
+    MONTHS[date.getUTCMonth()]
+  } ${date.getUTCDate()}, ${date.getUTCFullYear()}`;
+};

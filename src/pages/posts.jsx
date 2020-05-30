@@ -1,15 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-// import ArchiveList from '../components/blog/ArchiveList';
 import H1 from '../components/typography/H1';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import ArchiveList from '../components/blog/ArchiveList';
 import ExternalLink from '../components/typography/ExternalLink';
+import P from '../components/typography/P';
 
-const Archive = ({ data }) => {
+const Posts = ({ data }) => {
   const years = {};
   data.allMarkdownRemark.edges.forEach(({ node }) => {
     if (!years[node.frontmatter.year]) years[node.frontmatter.year] = [];
@@ -17,11 +17,14 @@ const Archive = ({ data }) => {
   });
   return (
     <Layout>
-      <SEO
-        title="archive"
-        description="Archive of all of Jeremy's blog posts"
-      />
-      <H1>Post Archive</H1>
+      <SEO title="Posts" description="Posts of all of Jeremy's blog posts" />
+      <H1>Posts</H1>
+      <P>
+        Jeremy writes blog posts about a variety of topics. Common topics
+        include: paleoclimatology, geology, software engineering, video games,
+        and board games. Most of the posts are to help his own edification. To
+        practice synthesizing, writing, and communicating science.
+      </P>
       {Object.keys(years)
         .sort()
         .reverse()
@@ -35,7 +38,7 @@ const Archive = ({ data }) => {
   );
 };
 
-export default Archive;
+export default Posts;
 
 export const query = graphql`
   query {

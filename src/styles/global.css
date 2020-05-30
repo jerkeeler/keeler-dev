@@ -22,6 +22,14 @@ body {
   @apply text-2xl my-4 font-bold;
 }
 
+.heading-4 {
+  @apply text-xl my-3 font-bold;
+}
+
+.heading-5 {
+  @apply text-lg font-bold italic;
+}
+
 .paragraph {
   @apply my-4;
 
@@ -73,6 +81,14 @@ body {
 
   & h3 {
     @apply heading-3;
+  }
+
+  & h4  {
+    @apply heading-4;
+  }
+
+  & h5 {
+    @apply heading-5;
   }
 
   & p {

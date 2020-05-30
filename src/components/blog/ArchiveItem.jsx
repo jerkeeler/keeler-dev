@@ -1,17 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import Tag from './Tag';
+
+import PostSummary from './PostSummary';
 
 const ArchiveItem = ({ node }) => (
-  <li className="mt-4 first:mt-0 leading-none">
-    <Link to={node.fields.url}>
-      {node.frontmatter.date} - {node.frontmatter.title}
-    </Link>
-    <p>
-      {node.frontmatter.tags.map((tag) => (
-        <Tag key={tag} tag={tag} />
-      ))}
-    </p>
+  <li className="mt-2 first:mt-0">
+    <PostSummary node={node} />
   </li>
 );
 

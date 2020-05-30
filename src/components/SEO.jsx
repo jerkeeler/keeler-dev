@@ -27,8 +27,8 @@ function SEO({ description, lang, meta, title = '' }) {
 
   const metaDescription = description || site.siteMetadata.description;
   const newTitle = title
-    ? `${site.siteMetadata.title} - ${title}`
-    : site.siteMetadata.title;
+    ? `${title} | ${site.siteMetadata.title}`
+    : `${site.siteMetadata.title} - Paleoclimatologist, software engineer`;
 
   return (
     <Helmet

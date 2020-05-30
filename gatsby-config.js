@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `keeler.dev`,
-    description: `The life, thoughts, ramblings, musings, and photos of Jeremy Keeler. Software engineer, geologist, and nature enthusist.`,
+    title: `Jeremy Keeler`,
+    description: `The life, thoughts, ramblings, musings, and photos of Jeremy Keeler. Paleoclimatologist, software engineer, and nature enthusist.`,
     author: `@jerkeeler`,
     siteUrl: `https://keeler.dev`,
   },
@@ -103,17 +103,17 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-embed-video",
+            resolve: 'gatsby-remark-embed-video',
             options: {
               related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
-            }
+            },
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 600,
-              showCaptions: ["title"],
-            }
+              showCaptions: ['title'],
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -136,10 +136,10 @@ module.exports = {
               // If setting this to true, the parser won't handle and highlight inline
               // code used in markdown i.e. single backtick code like `this`.
               noInlineHighlight: false,
-            }
+            },
           },
-        ]
-      }
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -159,15 +159,15 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.description,
                   date: edge.node.frontmatter.date,
                   url: `${site.siteMetadata.siteUrl}/posts/${edge.node.frontmatter.path}`,
                   guid: edge.node.frontmatter.path,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
-              })
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                });
+              });
             },
             query: `
               {
@@ -189,11 +189,11 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "keeler.dev RSS feed",
+            output: '/rss.xml',
+            title: 'keeler.dev RSS feed',
           },
         ],
       },
     },
   ],
-}
+};

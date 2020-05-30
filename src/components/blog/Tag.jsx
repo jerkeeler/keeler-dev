@@ -1,21 +1,25 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import classnames from 'classnames';
 
-import InternalLink from '../typography/InternalLink';
-
 const Tag = ({ tag, className }) => (
-  <InternalLink
+  <Link
     to={`/tags/${tag}`}
     className={classnames(
       'text-sm',
-      'ml-2',
+      'mr-2',
       'first:ml-0',
-      'text-gray-700',
+      'mt-1',
+      'py-1',
+      'px-2',
+      'bg-gray-200',
+      'rounded',
+      'hover:bg-gray-300',
       className,
     )}
   >
     #{tag}
-  </InternalLink>
+  </Link>
 );
 
 export default Tag;

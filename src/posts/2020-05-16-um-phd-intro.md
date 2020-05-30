@@ -2,9 +2,8 @@
 path: "um-phd-intro"
 date: "2020-05-16"
 title: "Off to Graduate School!"
-description: "A quick intro to paleoclimatology, my field of study for the next ~5 years at the University of Michigan."
-tags: ["UM", "Ph.D.", "paleoclimatology"]
-short: false
+description: "A quick intro to the next phase of my career and life journey. Some info and thoughts about my next ~5 years at the University of Michigan."
+tags: ["UM", "Ph.D.", "paleoclimatology", "beginnings"]
 ---
 
 I am ecstatic! I have received, and accepted, an offer of admission to the University of Michigan's [Department of Earth and Environmental Sciences](https://lsa.umich.edu/earth). Dr. Chris Poulsen will be my advisor as I research the equilibrium climate sensitivity of Earth's past, present, and future in Chris' [Climate Change Research Group](https://www.umclimate.com).

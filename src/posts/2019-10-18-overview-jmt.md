@@ -2,7 +2,7 @@
 path: "jmt-overview"
 date: "2019-10-18"
 title: "John Muir Trail Recap"
-description: "An overview of Jeremy's hike along the John Muir Trail in August 2019."
+description: "An overview of my hike along the John Muir Trail in August 2019."
 tags: ["jmt", "backpacking", "hiking"]
 ---
 

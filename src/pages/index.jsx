@@ -4,72 +4,66 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import H1 from '../components/typography/H1';
 import { graphql } from 'gatsby';
-import Post from '../components/blog/Post';
-import HR from '../components/typography/HR';
-import LinkButton from '../components/LinkButton';
+import P from '../components/typography/P';
+import Img from 'gatsby-image';
+import Timeline from '../components/Timeline';
+import RecentPosts from '../components/RecentPosts';
+import Projects from '../components/Projects';
+import ExternalLink from '../components/typography/ExternalLink';
 
-const Item = ({ children, url, short }) => (
-  <div className="mb-4">
-    <HR />
-    <div className="flex justify-center">{children}</div>
-    {!short && (
-      <div className="flex justify-center mt-6">
-        <LinkButton to={url}>Read More</LinkButton>
+const Section = ({ children }) => <div className="mt-20">{children}</div>;
+
+const Index = ({ data }) => (
+  <Layout>
+    <SEO />
+    <H1>Hi, I'm Jeremy Keeler</H1>
+    <div
+      className="mb-6 grid md:grid-flow-col grid-flow-row"
+      style={{ justifyItems: 'center' }}
+    >
+      <Img
+        fluid={data.image.childImageSharp.fluid}
+        alt="Jeremy's Face"
+        className="w-40 h-40 rounded-full mr-0 md:mr-12 mt-0 mb-3 md:mb-0"
+      />
+      <div>
+        <P>
+          I am a <em>paleoclimatologist</em>, <em>software engineer</em>, and{' '}
+          <em>nature enthusiast</em>. I'm currently living in Hoboken, New
+          Jersey and working as a Senior Software Engineer at{' '}
+          <ExternalLink to="https://affirm.com">Affirm</ExternalLink>. In the
+          Fall I will be pursing a Ph.D. in paleoclimatology at the University
+          of Michigan.
+          {/*I'm currently living in Ann Arbor, Michigan and pursing my Ph.D. in paleoclimatology at the University of*/}
+          {/*Michigan.*/}
+        </P>
+        <P>
+          This is my corner of the cosmos. Filled with my posts, thoughts, and
+          learnings on a variety of topics &mdash; paleoclimatology, software
+          engineering, geology, videos games, board games.
+        </P>
       </div>
-    )}
-  </div>
+    </div>
+    <Section>
+      <RecentPosts />
+    </Section>
+    <Section>
+      <Projects />
+    </Section>
+    <Section>
+      <Timeline />
+    </Section>
+  </Layout>
 );
-
-const Index = ({ data }) => {
-  const { allMarkdownRemark } = data;
-  return (
-    <Layout>
-      <SEO />
-      <H1>keeler.dev</H1>
-      <p>
-        A corner of the cosmos for Jeremy Keeler, software engineer, geologist,
-        and nature enthusiast. Prone to thoughts, ramblings, musings, and other
-        writings. Topics: whatever is on my mind.
-      </p>
-      <p className="mt-4">Recent Posts:</p>
-      {allMarkdownRemark.nodes.map(
-        ({ excerpt, frontmatter, html, fields: { url } }) => (
-          <Item key={url} url={url} short={frontmatter.short}>
-            <Post
-              frontmatter={frontmatter}
-              html={frontmatter.short ? html : excerpt}
-              url={url}
-              allowComments={false}
-            />
-          </Item>
-        ),
-      )}
-    </Layout>
-  );
-};
 
 export default Index;
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      limit: 10
-      filter: { frontmatter: { draft: { ne: true } } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      nodes {
-        excerpt(format: HTML, pruneLength: 800)
-        fields {
-          url
-        }
-        html
-        frontmatter {
-          path
-          title
-          date(formatString: "MMMM DD, YYYY")
-          year: date(formatString: "YYYY")
-          tags
-          short
+    image: file(relativePath: { eq: "about.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 400) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
