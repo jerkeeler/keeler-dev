@@ -27,8 +27,8 @@ const Navbar = () => (
     </Link>
     <ul className="flex flex-wrap md:flex-col">
       <NavItem to="/now">Now</NavItem>
-      {/*<NavItem to="/projects">Projects</NavItem>*/}
       <NavItem to="/posts">Posts</NavItem>
+      <NavItem to="/contact">Contact</NavItem>
     </ul>
   </nav>
 );
