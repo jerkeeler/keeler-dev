@@ -29,13 +29,12 @@ const Index = ({ data }) => (
       <div>
         <P>
           I am a <em>paleoclimatologist</em>, <em>software engineer</em>, and{' '}
-          <em>nature enthusiast</em>. I'm currently living in Hoboken, New
-          Jersey and working as a Senior Software Engineer at{' '}
-          <ExternalLink to="https://affirm.com">Affirm</ExternalLink>. In the
-          Fall I will be pursing a Ph.D. in paleoclimatology at the University
-          of Michigan.
-          {/*I'm currently living in Ann Arbor, Michigan and pursing my Ph.D. in paleoclimatology at the University of*/}
-          {/*Michigan.*/}
+          <em>nature enthusiast</em>. I'm currently living in Ann Arbor,
+          Michigan and pursing my Ph.D. in paleoclimatology at the{' '}
+          <ExternalLink to="https://umich.edu">
+            University of Michigan
+          </ExternalLink>
+          .
         </P>
         <P>
           This is my corner of the cosmos. Filled with my posts, thoughts, and

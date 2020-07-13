@@ -18,7 +18,7 @@ const RecentPosts = () => {
   } = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        limit: 3
+        limit: 4
         filter: { frontmatter: { draft: { ne: true } } }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {

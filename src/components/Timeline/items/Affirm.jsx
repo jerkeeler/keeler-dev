@@ -22,7 +22,7 @@ const Affirm = () => {
 
   return (
     <TimelineItem>
-      <TimelineContent date="September 2019 - Present">
+      <TimelineContent date="September 2019 - July 2020">
         <H5>Senior Software Engineer at Affirm</H5>
         <p>
           I worked on the Capital Engineering team at{' '}

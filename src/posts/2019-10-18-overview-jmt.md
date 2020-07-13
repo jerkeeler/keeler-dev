@@ -3,7 +3,7 @@ path: "jmt-overview"
 date: "2019-10-18"
 title: "John Muir Trail Recap"
 description: "An overview of my hike along the John Muir Trail in August 2019."
-tags: ["jmt", "backpacking", "hiking"]
+tags: ["jmt", "backpacking"]
 ---
 
 In August 2019 I was fortunate enough to traipse around the wilderness for 2 weeks hiking a 123 mile portion of the [John Muir Trail](https://en.wikipedia.org/wiki/John_Muir_Trail). It was an amazing experience. I will have more follow up posts talking about my gear, our itinerary, etc... but for now, enjoy some photos from my trip and an overview of my favorite spots.
@@ -28,7 +28,7 @@ And of course the passes were amazing. Muir Pass is just absolutely stunning.
 
 ![Top of Muir Pass looking North](../images/jmt/muir_pass_top.jpg "The ascent to Muir Pass")
 
-I also documented our shenanigans on video. (Edited montage coming soon!) As we descended the snowfields on the South side of Muir Pass we couldn't help but feel like adventurers. 
+I also documented our shenanigans on video. (Edited montage coming soon!) As we descended the snowfields on the South side of Muir Pass we couldn't help but feel like adventurers.
 
 `youtube: https://www.youtube.com/watch?v=B0JgTQIZ6-c`
 

@@ -21,14 +21,14 @@ const Now = () => (
     </P>
     <H3>Work...</H3>
     <P>
-      Living it up at{' '}
-      <ExternalLink to="https://affirm.com">Affirm</ExternalLink> in NYC.
-      Software engineer doing software engineer things. 9-6 most days, but every
-      other week I still find I'm doing those late night startup hours.
+      Living in Ann Arbor and pursuing a Ph.D. in paleoclimatology from the{' '}
+      <ExternalLink to="https://umich.edu">University of Michigan</ExternalLink>
+      . Also working on{' '}
+      <ExternalLink to="https://aoestats.io">aoestats.io</ExternalLink> in my
+      spare time and exploring my data scientist capabilities.
     </P>
     <H3>Music...</H3>
     <List>
-      <List.Item>Billie Eilish</List.Item>
       <List.Item>
         <ExternalLink to="https://open.spotify.com/playlist/5A4KncYhd95iKPaIYnjl5B?si=SzjzWMupQmu-S9AKtr0INQ">
           Zelda and Chill
@@ -36,6 +36,7 @@ const Now = () => (
         lofi remixes of Zelda soundtrack
       </List.Item>
       <List.Item>Lord of the Rings soundtrack</List.Item>
+      <List.Item>Vampire Weekend</List.Item>
     </List>
     <H3>Reading...</H3>
     <P>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 
-import H2 from '../typography/H2';
+import H1 from '../typography/H1';
 import Tag from './Tag';
 import Comments from './Comments';
 
@@ -25,7 +25,7 @@ const Post = ({ frontmatter, html, url, allowComments = true }) => {
   return (
     <article className="shadow-lg py-6 px-3 border border-gray-200">
       <Link to={url} className="hover:cursor-pointer">
-        <H2>{frontmatter.title}</H2>
+        <H1>{frontmatter.title}</H1>
       </Link>
       <p className="mb-1 text-gray-700">{frontmatter.date}</p>
       <div className="leading-none flex flex-row flex-wrap">
