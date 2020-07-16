@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import Layout from '../components/Layout';
 import H1 from '../components/typography/H1';
@@ -14,10 +15,33 @@ const Now = () => (
       title="Now"
       description="Jeremy's now page. What he is up to NOW. Music he's listening to, what he's doing, what books he's reading."
     />
+    <Helmet
+      script={[
+        {
+          type: 'text/javascript',
+          async: true,
+          src: 'https://platform.twitter.com/widgets.js',
+          chartset: 'utf-8',
+        },
+      ]}
+    />
     <H1>Now</H1>
     <P>
       What is a{' '}
       <ExternalLink to="https://nownownow.com/">now page</ExternalLink>?
+    </P>
+    <H3>Latest Tweet</H3>
+    <P className="grid justify-center">
+      <a
+        className="twitter-timeline"
+        href="https://twitter.com/jerkeeler?ref_src=twsrc%5Etfw"
+        data-tweet-limit="1"
+        data-height="200"
+        data-width="600"
+        data-dnt="true"
+      >
+        Latest tweet by Jeremy
+      </a>{' '}
     </P>
     <H3>Work...</H3>
     <P>
