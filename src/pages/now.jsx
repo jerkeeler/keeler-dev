@@ -40,7 +40,7 @@ const Now = () => (
         data-width="600"
         data-dnt="true"
       >
-        Latest tweet by Jeremy
+        Loading latest tweet by Jeremy...
       </a>{' '}
     </P>
     <H3>Work...</H3>
