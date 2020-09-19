@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import 'gatsby-remark-mathjax-ssr/mathjax.css';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';

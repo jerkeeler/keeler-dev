@@ -6,7 +6,6 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 
-/* purgecss start ignore */
 code[class*='language-'],
 pre[class*='language-'] {
   @apply text-gray-400 rounded font-mono;
@@ -119,4 +118,3 @@ pre[class*='language-'] {
 .token.inserted {
   color: green;
 }
-/* purgecss end ignore */

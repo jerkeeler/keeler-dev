@@ -5,3 +5,4 @@
  */
 import './src/styles/global.css';
 import './src/styles/prismjs.css';
+import './node_modules/gatsby-remark-mathjax-ssr/mathjax.css';
