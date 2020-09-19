@@ -116,6 +116,9 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-mathjax-ssr`,
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',

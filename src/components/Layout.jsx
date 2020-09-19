@@ -7,9 +7,9 @@ import Footer from './Footer';
 const Layout = ({ children }) => {
   return (
     <div className="flex justify-center min-h-screen text-gray-800">
-      <div className="max-w-screen-lg flex-grow flex flex-col md:flex-row-reverse p-4">
+      <div className="w-full max-w-screen-lg flex-grow flex flex-col md:flex-row-reverse p-4">
         <Navbar />
-        <div className="flex-grow md:mr-40">
+        <div className="flex-grow overflow-auto md:mr-40">
           <main>{children}</main>
           <Footer />
         </div>

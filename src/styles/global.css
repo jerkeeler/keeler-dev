@@ -62,11 +62,11 @@ body {
 .footer-item {
   &:after {
     @apply ml-4;
-    content: '|'
+    content: '|';
   }
 
   &:last-child:after {
-    content: ''
+    content: '';
   }
 }
 
@@ -83,7 +83,7 @@ body {
     @apply heading-3;
   }
 
-  & h4  {
+  & h4 {
     @apply heading-4;
   }
 
@@ -127,13 +127,18 @@ body {
     @apply border-collapse border border-solid border-black;
   }
 
-  & td, & th {
+  & td,
+  & th {
     @apply border border-solid border-black py-2 px-4;
   }
 
   & .embedVideo-iframe {
     @apply block relative my-0 mx-auto w-full;
     max-width: 600px;
+  }
+
+  & .MJXc-display {
+    overflow: auto;
   }
 }
 /* purgecss end ignore */
