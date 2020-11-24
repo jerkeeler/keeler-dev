@@ -10,6 +10,6 @@
   force = true
 
 [context.production.environment]
-  NODE_VERSION = "12.16.1"
-  NPM_VERSION = "6.14.4"
+  NODE_VERSION = "14.9.0"
+  NPM_VERSION = "6.14.9"
   NODE_ENV = "production"
