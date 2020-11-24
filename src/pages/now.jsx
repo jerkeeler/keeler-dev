@@ -57,10 +57,9 @@ const Now = () => (
         </ExternalLink>
       </List.Item>
       <List.Item>
-        <ExternalLink to="https://music.apple.com/us/playlist/todays-chill/pl.2bb29727dbc34a63936787297305c37c">
-          Today's Chill
+        <ExternalLink to="https://www.youtube.com/watch?v=3VTkBuxU4yk">
+          More - KDA
         </ExternalLink>{' '}
-        on Apple Music
       </List.Item>
     </List>
     <H3>Reading...</H3>
@@ -83,8 +82,8 @@ const Now = () => (
     <H3>Games...</H3>
     <List>
       <List.Item>
-        <ExternalLink to="https://luigismansion.nintendo.com">
-          Luigi's Mansion 3
+        <ExternalLink to="https://www.elderscrollsonline.com/en-us/home">
+          Elder Scrolls Online
         </ExternalLink>
       </List.Item>
       <List.Item>
