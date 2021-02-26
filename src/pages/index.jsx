@@ -30,7 +30,7 @@ const Index = ({ data }) => (
         <P>
           I am a <em>paleoclimatologist</em>, <em>software engineer</em>, and{' '}
           <em>adventurer</em>. I am currently living in Ann Arbor, Michigan and
-          pursing my Ph.D. in paleoclimatology at the{' '}
+          pursuing my Ph.D. in paleoclimatology at the{' '}
           <ExternalLink to="https://umich.edu">
             University of Michigan
           </ExternalLink>
