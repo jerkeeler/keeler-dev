@@ -39,7 +39,7 @@ const Index = ({ data }) => (
         <P>
           This is my corner of the cosmos. Filled with my posts, thoughts, and
           learnings on a variety of topics &mdash; paleoclimatology, software
-          engineering, geology, videos games, board games.
+          engineering, geology, video games, board games, running, backpacking.
         </P>
       </div>
     </div>
