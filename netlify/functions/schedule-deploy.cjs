@@ -17,4 +17,4 @@ const buildHandler = async () => {
 
 // const handler = schedule('@hourly', buildHandler)
 
-export { buildHandler as handler };
+module.export = { handler: buildHandler };
