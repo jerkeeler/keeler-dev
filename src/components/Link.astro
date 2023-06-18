@@ -1,0 +1,11 @@
+---
+export interface Props {
+  to: string;
+}
+
+const { to } = Astro.props;
+---
+
+<a href={to} class="underline decoration-primary decoration-2 hover:decoration-dashed">
+  <slot />
+</a>

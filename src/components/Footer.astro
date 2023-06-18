@@ -1,0 +1,29 @@
+---
+import HR from './typography/HR.astro';
+import FooterItem from './FooterItem.astro';
+import FooterItemSeparator from './FooterItemSeparator.astro';
+import IconLink from './IconLink.astro';
+import Github from './icons/Github.astro';
+import Linkedin from './icons/Linkedin.astro';
+---
+
+<HR />
+
+<p class="text-center">
+  © Jeremy Keeler 2018&ndash;{new Date().getFullYear()} &mdash; Updated:
+</p>
+
+<ul class="flex justify-center mt-2">
+  <FooterItem>
+    <IconLink to="https://github.com/jerkeeler"><Github /></IconLink>
+  </FooterItem>
+  <FooterItemSeparator />
+  <FooterItem>
+    <IconLink to="https://www.linkedin.com/in/jeremy-keeler-74567891/"><Linkedin /></IconLink>
+  </FooterItem>
+</ul>
+
+<p class="text-xs text-center py-4">
+  All opinions on this website are mine and mine alone. They do not reflect the opinions of my employers or my
+  colleagues.
+</p>

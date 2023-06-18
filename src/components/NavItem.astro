@@ -1,0 +1,15 @@
+---
+import Link from './Link.astro';
+
+export interface Props {
+  to: string;
+}
+
+const { to } = Astro.props;
+---
+
+<li class="ml-2 md:ml-0 md:mt-2">
+  <Link to={to}>
+    <slot />
+  </Link>
+</li>

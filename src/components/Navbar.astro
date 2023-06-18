@@ -1,0 +1,14 @@
+---
+import NavItem from './NavItem.astro';
+---
+
+<nav class="flex md:flex-col md:fixed md:w-40 md:pl-6 mb-4 md:mb-0 text-xl">
+  <a href="/" class="hover:opacity-75">
+    <img class="max-w-none w-12 inline" src="/minimal_j.svg" alt="A geometric, minimal version of the J character" />
+  </a>
+  <ul class="flex flex-wrap md:flex-col">
+    <NavItem to="/now">Now</NavItem>
+    <NavItem to="/posts">Posts</NavItem>
+    <NavItem to="/contact">Contact</NavItem>
+  </ul>
+</nav>
