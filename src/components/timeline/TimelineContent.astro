@@ -1,11 +1,65 @@
 ---
+import dayjs from 'dayjs';
+
 export interface Props {
-  date: string;
+  startDate?: Date;
+  endDate?: Date;
 }
-const { date } = Astro.props;
+const { startDate, endDate } = Astro.props;
+let startDateStr = '';
+let endDateStr = '';
+if (startDate) {
+  startDateStr = startDate.toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+if (endDate) {
+  endDateStr = endDate.toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
+let diffStr = '';
+if (startDate) {
+  const start = dayjs(startDate);
+  const end = dayjs(endDate);
+  let diffMonth = end.diff(start, 'month');
+  const diffYear = end.diff(start, 'year');
+  diffMonth = diffMonth - diffYear * 12;
+
+  if (diffYear > 0) {
+    diffStr = `${diffYear} year`;
+  }
+  if (diffYear > 1) {
+    diffStr += 's';
+  }
+
+  if (diffMonth > 0 && diffYear > 0) {
+    diffStr += `, ${diffMonth} month`;
+  } else if (diffMonth > 0 && diffYear == 0) {
+    diffStr += `${diffMonth} month`;
+  }
+
+  if (diffMonth > 1) {
+    diffStr += 's';
+  }
+}
 ---
 
 <div class="pr-4">
-  <p class="text-sm">{date}</p>
+  <div class="text-sm">
+    <p class="block sm:inline-block">
+      {startDateStr}
+      {startDate && '-'}
+      {endDate ? endDateStr : 'current'}
+    </p>
+    <p class="block sm:inline-block">
+      {diffStr && `(${diffStr})`}
+    </p>
+  </div>
   <slot />
 </div>

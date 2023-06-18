@@ -20,7 +20,7 @@ import TimelineLogo from './timeline/TimelineLogo.astro';
   <H2>Resumé</H2>
 
   <TimelineItem>
-    <TimelineContent date="January 2022 - current">
+    <TimelineContent startDate={new Date('2022-01-01')}>
       <H5>
         Senior Software Engineer at <Link to="https://affirm.com">Affirm</Link>
       </H5>
@@ -34,7 +34,7 @@ import TimelineLogo from './timeline/TimelineLogo.astro';
   </TimelineItem>
 
   <TimelineItem>
-    <TimelineContent date="August 2020 - December 2021">
+    <TimelineContent startDate={new Date('2020-08-01')} endDate={new Date('2021-12-01')}>
       <H5 className="italic">
         Ph.D. program at the
         <Link to="https://umich.edu">University of Michigan</Link>
@@ -51,21 +51,22 @@ import TimelineLogo from './timeline/TimelineLogo.astro';
   </TimelineItem>
 
   <TimelineItem>
-    <TimelineContent date="June 2018 - July 2020">
+    <TimelineContent startDate={new Date('2018-06-01')} endDate={new Date('2020-07-01')}>
       <H5>
         Senior Software Engineer at <Link to="https://affirm.com">Affirm</Link>
       </H5>
       <P>
         I worked on the Capital Engineering team at Affirm, designing and implementing an internal order management
-        system. I helped modularize various sub-systems and designed robust APIs between teams to enable flexibility and
-        better separation of concerns.
+        system for the sale of installment loans to loan buyers, debt warehouses, and securitizations. I helped
+        modularize various sub-systems and designed robust APIs between teams to enable flexibility and better
+        separation of concerns.
       </P>
     </TimelineContent>
     <TimelineLogo img={AffirmLogo} alt="Affirm logo" />
   </TimelineItem>
 
   <TimelineItem>
-    <TimelineContent date="September 2017 - June 2018">
+    <TimelineContent startDate={new Date('2017-09-01')} endDate={new Date('2018-06-01')}>
       <H5>
         Technology Analyst at <Link to="https://www.goldmansachs.com/">Goldman Sachs</Link>
       </H5>
@@ -78,7 +79,7 @@ import TimelineLogo from './timeline/TimelineLogo.astro';
   </TimelineItem>
 
   <TimelineItem>
-    <TimelineContent date="August 2016 - September 2017">
+    <TimelineContent startDate={new Date('2016-08-01')} endDate={new Date('2017-09-01')}>
       <H5>
         Fullstack Developer at <Link to="https://cultureiq.com/">CultureIQ</Link>
       </H5>
@@ -92,7 +93,7 @@ import TimelineLogo from './timeline/TimelineLogo.astro';
   </TimelineItem>
 
   <TimelineItem>
-    <TimelineContent date="May 2016">
+    <TimelineContent endDate={new Date('2016-05-01')}>
       <H5>
         Graduated from the <Link to="https://udel.edu">University of Delaware</Link>
       </H5>

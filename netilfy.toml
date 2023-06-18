@@ -1,0 +1,15 @@
+[build]
+  base = ""
+  publish = "dist/"
+  command = "npm run build"
+
+[[redirects]]
+  from = "https://keeler-dev.netlify.app/*"
+  to = "https://keeler.dev/:splat"
+  status = 301
+  force = true
+
+[context.production.environment]
+  NODE_VERSION = "20.3.0"
+  NPM_VERSION = "9.7.1"
+  NODE_ENV = "production"
