@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch'
 
 const BUILD_HOOK = process.env.BUILD_HOOK;
 
