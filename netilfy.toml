@@ -9,7 +9,7 @@
   status = 301
   force = true
 
-[context.production.environment]
+[context.production]
   NODE_VERSION = "20.3.0"
   NPM_VERSION = "9.7.1"
   NODE_ENV = "production"
