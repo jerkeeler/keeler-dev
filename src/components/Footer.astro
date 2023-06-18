@@ -5,12 +5,16 @@ import FooterItemSeparator from './FooterItemSeparator.astro';
 import IconLink from './IconLink.astro';
 import Github from './icons/Github.astro';
 import Linkedin from './icons/Linkedin.astro';
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const currentDate = new Date();
 ---
 
 <HR />
 
 <p class="text-center">
-  © Jeremy Keeler 2018&ndash;{new Date().getFullYear()} &mdash; Updated:
+  © Jeremy Keeler 2018&ndash;<span id="currentYear">{currentDate.getFullYear()}</span> &mdash; Updated:
+  {`${MONTHS[currentDate.getUTCMonth()]} ${currentDate.getUTCDate()}, ${currentDate.getUTCFullYear()}`}
 </p>
 
 <ul class="flex justify-center mt-2">
@@ -27,3 +31,8 @@ import Linkedin from './icons/Linkedin.astro';
   All opinions on this website are mine and mine alone. They do not reflect the opinions of my employers or my
   colleagues.
 </p>
+
+<script type="application/javascript">
+  const el = document.getElementById('currentYear');
+  el.innerHTML = new Date().getFullYear();
+</script>
