@@ -1,0 +1,8 @@
+---
+export interface Props {
+  name: string;
+}
+const { name } = Astro.props;
+---
+
+<label for={name} class="mb-2"><slot /></label>

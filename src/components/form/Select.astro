@@ -1,0 +1,17 @@
+---
+export interface Props {
+  name: string;
+  required?: boolean;
+  options: string[];
+}
+const { name, required, options } = Astro.props;
+---
+
+<select
+  name={name}
+  class="shadow md:w-64 h-10 border-solid border border-gray-300 rounded p-2 focus:shadow-outline"
+  required={required}
+>
+  <option value="">---</option>
+  {options.map((op) => <option value={op}>{op}</option>)}
+</select>

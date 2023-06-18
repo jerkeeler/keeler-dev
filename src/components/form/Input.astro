@@ -1,0 +1,18 @@
+---
+export interface Props {
+  type: 'email' | 'text' | 'password';
+  name: string;
+  placeholder: string;
+  required: boolean;
+}
+const { type, name, placeholder, required } = Astro.props;
+---
+
+<input
+  class="shadow md:w-64 border-solid border border-gray-300 rounded-lg p-2 focus:shadow-outline"
+  type={type}
+  name={name}
+  placeholder={placeholder}
+  required={required}
+  min-length={2}
+/>

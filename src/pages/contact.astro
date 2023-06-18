@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import H1 from '../components/typography/H1.astro';
+import FormGroup from '../components/form/FormGroup.astro';
+import Label from '../components/form/Label.astro';
+import Input from '../components/form/Input.astro';
+import Select from '../components/form/Select.astro';
+import TextArea from '../components/form/TextArea.astro';
+import FormButton from '../components/form/FormButton.astro';
+---
+
+<Layout title="contact">
+  <H1>Contact Jeremy</H1>
+
+  <form
+    class="flex flex-col"
+    name="contact"
+    method="post"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    data-netlify-recaptcha="true"
+    action="/contact/success"
+  >
+    <input class="hidden" type="hidden" name="form-name" value="contact" />
+    <input class="hidden" name="bot-field" />
+    <FormGroup>
+      <Label name="name">Name:</Label>
+      <Input name="name" placeholder="Jane Doe" type="text" required />
+    </FormGroup>
+    <FormGroup>
+      <Label name="email">Email:</Label>
+      <Input name="email" placeholder="jane@doe.com" type="email" required />
+    </FormGroup>
+    <FormGroup>
+      <Label name="subject">Subject:</Label>
+      <Select name="subject" options={['General Inquiry', 'Business', 'aoestats.io']} required />
+    </FormGroup>
+    <FormGroup>
+      <Label name="message">Message:</Label>
+      <TextArea name="message" placeholder="Hello, Jeremy!" required />
+    </FormGroup>
+    <FormGroup>
+      <div class="g-recaptcha" data-sitekey="6LeI-7AZAAAAAH4tR0zvQ1sz0g8p8Z3IyDsaH8eY"></div>
+    </FormGroup>
+    <FormGroup>
+      <FormButton type="submit">Submit</FormButton>
+    </FormGroup>
+  </form>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</Layout>
