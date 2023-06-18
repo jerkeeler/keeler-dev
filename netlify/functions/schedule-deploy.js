@@ -1,8 +1,9 @@
+import { schedule } from '@netlify/functions';
 import fetch from 'node-fetch'
 
 const BUILD_HOOK = process.env.BUILD_HOOK;
 
-const handler = async () => {
+const buildHandler = async () => {
   await fetch(BUILD_HOOK, {
     method: 'POST',
   }).then((response) => {
@@ -13,5 +14,7 @@ const handler = async () => {
     statusCode: 200,
   };
 };
+
+const handler = schedule('@hourly', buildHandler)
 
 export { handler };
