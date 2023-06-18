@@ -1,4 +1,4 @@
-// const { schedule } = require('@netlify/functions');
+const { schedule } = require('@netlify/functions');
 const fetch = require('node-fetch');
 
 const BUILD_HOOK = process.env.BUILD_HOOK;
@@ -15,6 +15,6 @@ const buildHandler = async () => {
   };
 };
 
-// const handler = schedule('@hourly', buildHandler)
+const handler = schedule('@monthly', buildHandler)
 
-exports.handler = buildHandler;
+exports.handler = handler;
