@@ -1,0 +1,11 @@
+---
+import { Image } from '@astrojs/image/components';
+
+export interface Props {
+  img: ImageMetadata;
+  alt: string;
+}
+const { img, alt } = Astro.props;
+---
+
+<Image class="w-16 h-16" src={img} alt={alt} />

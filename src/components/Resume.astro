@@ -1,8 +1,106 @@
 ---
+import AffirmLogo from '../assets/affirm.png';
+import CultureIQLogo from '../assets/culture_iq.jpg';
+import GoldmanLogo from '../assets/goldman_sachs.png';
+import UDLogo from '../assets/university_of_delaware.jpg';
+import UMLogo from '../assets/university_of_michigan.png';
+
+import B from './typography/B.astro';
 import H2 from './typography/H2.astro';
+import H5 from './typography/H5.astro';
+import Link from './Link.astro';
+import P from './typography/P.astro';
 import Section from './Section.astro';
+import TimelineContent from './timeline/TimelineContent.astro';
+import TimelineItem from './timeline/TimelineItem.astro';
+import TimelineLogo from './timeline/TimelineLogo.astro';
 ---
 
 <Section>
   <H2>Resumé</H2>
+
+  <TimelineItem>
+    <TimelineContent date="January 2022 - current">
+      <H5>
+        Senior Software Engineer at <Link to="https://affirm.com">Affirm</Link>
+      </H5>
+      <P>
+        I work on the Capital Engineering team at Affirm, designing and implementing data pipelines to move and process
+        loans to/from our investors. In addition, my team and I manage investor reporting, management, and
+        configuration.
+      </P>
+    </TimelineContent>
+    <TimelineLogo img={AffirmLogo} alt="Affirm logo" />
+  </TimelineItem>
+
+  <TimelineItem>
+    <TimelineContent date="August 2020 - December 2021">
+      <H5 className="italic">
+        Ph.D. program at the
+        <Link to="https://umich.edu">University of Michigan</Link>
+      </H5>
+      <P>
+        I researched water isotope distributions during the
+        <Link to="https://en.wikipedia.org/wiki/Paleocene–Eocene_Thermal_Maximum">
+          Paleocene-Eocene Thermal Maximum
+        </Link>
+        using global climate models and paleoclimate proxies.
+      </P>
+    </TimelineContent>
+    <TimelineLogo img={UMLogo} alt="University of Michigan logo" />
+  </TimelineItem>
+
+  <TimelineItem>
+    <TimelineContent date="June 2018 - July 2020">
+      <H5>
+        Senior Software Engineer at <Link to="https://affirm.com">Affirm</Link>
+      </H5>
+      <P>
+        I worked on the Capital Engineering team at Affirm, designing and implementing an internal order management
+        system. I helped modularize various sub-systems and designed robust APIs between teams to enable flexibility and
+        better separation of concerns.
+      </P>
+    </TimelineContent>
+    <TimelineLogo img={AffirmLogo} alt="Affirm logo" />
+  </TimelineItem>
+
+  <TimelineItem>
+    <TimelineContent date="September 2017 - June 2018">
+      <H5>
+        Technology Analyst at <Link to="https://www.goldmansachs.com/">Goldman Sachs</Link>
+      </H5>
+      <P>
+        I worked in the Private Wealth Management (PWM) portion of Goldman Sachs. I worked on a trading floor, alongside
+        traders, creating a web application to automatically handle 10b5-1 plans. I used AngularJS and Java Spring.
+      </P>
+    </TimelineContent>
+    <TimelineLogo img={GoldmanLogo} alt="Goldman Sachs logo" />
+  </TimelineItem>
+
+  <TimelineItem>
+    <TimelineContent date="August 2016 - September 2017">
+      <H5>
+        Fullstack Developer at <Link to="https://cultureiq.com/">CultureIQ</Link>
+      </H5>
+      <P>
+        I worked at CultureIQ as a fullstack developer. I developed a large scale Django application with an AngularJS
+        frontend. I created a linear regression tool (frontend and backend) to help clients analyze the important
+        factors in their company culture.
+      </P>
+    </TimelineContent>
+    <TimelineLogo img={CultureIQLogo} alt="CultureIQ logo" />
+  </TimelineItem>
+
+  <TimelineItem>
+    <TimelineContent date="May 2016">
+      <H5>
+        Graduated from the <Link to="https://udel.edu">University of Delaware</Link>
+      </H5>
+      <P>
+        Graduated (cum laude) with bachelor of science degrees in <B>geologoical science</B> and
+        <B>environmental science</B>.
+      </P>
+    </TimelineContent>
+    <TimelineLogo img={UDLogo} alt="University of Delaware logo" />
+  </TimelineItem>
 </Section>
