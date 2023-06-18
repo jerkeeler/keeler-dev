@@ -15,6 +15,4 @@ const buildHandler = async () => {
   };
 };
 
-const handler = schedule('@monthly', buildHandler)
-
-exports.handler = handler;
+exports.handler = schedule('@monthly', buildHandler);
