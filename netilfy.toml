@@ -13,3 +13,7 @@
   NODE_VERSION = "20.3.0"
   NPM_VERSION = "9.7.1"
   NODE_ENV = "production"
+
+
+[functions."schedule-deploy"]
+schedule = "@monthly"
