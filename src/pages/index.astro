@@ -1,14 +1,17 @@
 ---
-import Link from '../components/Link.astro';
-import Layout from '../layouts/Layout.astro';
 import { Image } from '@astrojs/image/components';
+
 import AboutPhoto from '../assets/about.jpg';
-import Section from '../components/Section.astro';
+import H1 from '../components/typography/H1.astro';
+import Layout from '../layouts/Layout.astro';
+import Link from '../components/Link.astro';
+import Projects from '../components/Projects.astro';
+import Resume from '../components/Resume.astro';
 ---
 
 <Layout title="adventurer, developer">
   <div class="mb-2">
-    <h1 class="text-4xl mb-4 font-bold">Hi, I'm Jeremy 👋</h1>
+    <H1>Hi, I'm Jeremy 👋</H1>
     <h4 class="italic text-gray-600 text-xl -mt-4">But most call me Keeler</h4>
   </div>
 
@@ -17,15 +20,10 @@ import Section from '../components/Section.astro';
     <p class="pl-0 mt-2 sm:mt-0 sm:pl-6">
       Delawarean by birth, Pennsylvanin by residence, and nomad at heart. Software engineer by trade at
       <Link to="https://affirm.com">Affirm</Link>. Run, hike, camp, and backpack when the time allows. Fan of video
-      games, board games, and my fledgling garden.
+      games, tech enthusiast, and fledgling gardener.
     </p>
   </div>
 
-  <Section>
-    <h2 class="text-3xl mb-4 font-bold">Projects</h2>
-  </Section>
-
-  <Section>
-    <h2 class="text-3xl mb-4 font-bold">Resumé</h2>
-  </Section>
+  <Projects />
+  <Resume />
 </Layout>

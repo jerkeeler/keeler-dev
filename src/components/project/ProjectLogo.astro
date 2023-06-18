@@ -1,0 +1,7 @@
+---
+import { Image } from '@astrojs/image/components';
+
+const { img, alt } = Astro.props;
+---
+
+<Image src={img} alt={alt} width={100} class="w-12 h-12 mr-6" />

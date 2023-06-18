@@ -1,0 +1,51 @@
+---
+import AoestatsLogo from '../assets/aoestats_logo.png';
+import ChoralcatLogo from '../assets/cc-icon-primary.png';
+
+import B from './typography/B.astro';
+import H2 from './typography/H2.astro';
+import Link from './Link.astro';
+import P from './typography/P.astro';
+import Project from './project/Project.astro';
+import ProjectDescription from './project/ProjectDescription.astro';
+import ProjectLogo from './project/ProjectLogo.astro';
+import Section from './Section.astro';
+---
+
+<Section>
+  <H2>Projects</H2>
+
+  <Project>
+    <ProjectLogo img={ChoralcatLogo} alt="Choralcat logo" />
+    <ProjectDescription>
+      <P><B><Link to="https://choralcat.org">Choralcat</Link></B></P>
+      <P>
+        The first of its kind CCMS (Choral Catalog Management System). It's a power tool for choral music directors to
+        manage, tag, and organize their sheet music. The idea is to make searching your music inventory easier and
+        unlock your ability to put together killer musical programs.
+      </P>
+      <P>
+        The code can be found
+        <Link to="https://github.com/jerkeeler/choralcat">on GitHub</Link>. The application is a
+        <Link to="https://www.djangoproject.com">Django</Link> application with
+        <Link to="https://alpinejs.dev">AlpineJS</Link> and
+        <Link to="https://htmx.org">htmx</Link> for some light interactivity. I went overboard and integrated a CI/CD pipeline
+        and a full observability stack.
+      </P>
+    </ProjectDescription>
+  </Project>
+
+  <Project>
+    <ProjectLogo img={AoestatsLogo} alt="Aoestats logo" />
+    <ProjectDescription>
+      <P><B><Link to="https://aoestats.io">aoestats.io</Link></B></P>
+      <P>
+        aoestats.io is a website I created that periodically, and automatically, calculates statistics for the
+        <Link to="https://www.ageofempires.com/">Age of Empires II</Link>
+        video game. The backend and stats code is written with Python and Django. Stats are calculated each day via a script
+        scheduled with cron. The frontend is written with React and Gatsby and is updated daily after ths stats script is
+        run. The site is hosted on Netlify.
+      </P>
+    </ProjectDescription>
+  </Project>
+</Section>
