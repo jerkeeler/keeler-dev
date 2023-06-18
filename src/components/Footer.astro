@@ -17,15 +17,17 @@ const currentDate = new Date();
   {`${MONTHS[currentDate.getUTCMonth()]} ${currentDate.getUTCDate()}, ${currentDate.getUTCFullYear()}`}
 </p>
 
-<ul class="flex justify-center mt-2">
-  <FooterItem>
-    <IconLink to="https://github.com/jerkeeler"><Github /></IconLink>
-  </FooterItem>
+<div class="flex justify-center mt-2">
+  <div>
+    <IconLink to="https://github.com/jerkeeler" ariaLabel="Link to Keeler's GitHub"><Github /></IconLink>
+  </div>
   <FooterItemSeparator />
-  <FooterItem>
-    <IconLink to="https://www.linkedin.com/in/jeremy-keeler-74567891/"><Linkedin /></IconLink>
-  </FooterItem>
-</ul>
+  <div>
+    <IconLink to="https://www.linkedin.com/in/jeremy-keeler-74567891/" ariaLabel="Link to Keeler's LinkedIn">
+      <Linkedin />
+    </IconLink>
+  </div>
+</div>
 
 <p class="text-xs text-center py-4">
   All opinions on this website are mine and mine alone. They do not reflect the opinions of my employers or my

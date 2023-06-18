@@ -1,11 +1,12 @@
 ---
 export interface Props {
   to: string;
+  ariaLabel: string;
 }
 
-const { to } = Astro.props;
+const { to, ariaLabel } = Astro.props;
 ---
 
-<a href={to} rel="noopener noreferrer" class="text-primary-dark hover:text-primary inline-block">
+<a href={to} rel="noopener noreferrer" class="text-primary-dark hover:text-primary inline-block" aria-label={ariaLabel}>
   <slot />
 </a>
