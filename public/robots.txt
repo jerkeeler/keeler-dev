@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /contact/success
+Disallow: /admin
+Disallow: /healthcheck
+Disallow: /media
+Sitemap: https://keeler.dev/sitemap.xml
+Host: https://keeler.dev

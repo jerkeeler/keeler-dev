@@ -1,0 +1,26 @@
+---
+import { getCollection, CollectionEntry } from 'astro:content';
+
+import ArchiveList from '../components/posts/ArchiveList.astro';
+import Layout from '../layouts/Layout.astro';
+import H1 from '../components/typography/H1.astro';
+
+const postEntries = await getCollection('posts');
+
+const years: { [key: string]: CollectionEntry<'posts'>[] } = {};
+postEntries.forEach((post) => {
+  const year = post.data.date.getFullYear();
+  if (!years[year]) years[year] = [];
+  years[year].push(post);
+});
+---
+
+<Layout title="posts" description="List of all of Keeler's blog posts.">
+  <H1>Posts</H1>
+  {Object.keys(years)
+    .sort()
+    .reverse()
+    .map((year) => (
+      <ArchiveList year={year} posts={years[year]} />
+    ))}
+</Layout>

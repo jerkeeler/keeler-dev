@@ -1,0 +1,57 @@
+---
+import classnames from 'classnames';
+
+function stringToHash(inputStr: string): number {
+  // No cryptographic hash function to generate pesudo-random reproducible number
+  // from an arbitrary string
+  // Adapted from https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript
+  let hash = 0;
+
+  if (inputStr.length === 0) return hash;
+
+  for (let i = 0; i < inputStr.length; i++) {
+    const char = inputStr.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash = hash & hash;
+  }
+
+  return hash;
+}
+
+// const bgClasses = [
+//   ['bg-green-200', 'hover:bg-green-300'],
+//   ['bg-red-200', 'hover:bg-red-300'],
+//   ['bg-orange-200', 'hover:bg-orange-300'],
+//   ['bg-blue-200', 'hover:bg-blue-300'],
+//   ['bg-lime-200', 'hover:bg-lime-300'],
+//   ['bg-cyan-200', 'hover:bg-cyan-300'],
+//   ['bg-violet-200', 'hover:bg-violet-300'],
+//   ['bg-rose-200', 'hover:bg-rose-300'],
+// ];
+
+const bgClasses = [
+  ['bg-green-200'],
+  ['bg-red-200'],
+  ['bg-orange-200'],
+  ['bg-blue-200'],
+  ['bg-lime-200'],
+  ['bg-cyan-200'],
+  ['bg-violet-200'],
+  ['bg-rose-200'],
+];
+
+export interface Props {
+  tag: string;
+}
+const { tag } = Astro.props;
+
+const hash = stringToHash(tag);
+const colors = bgClasses[hash % bgClasses.length];
+---
+
+<div
+  {/*href={`/tags/${tag}`} */}
+  class={classnames('text-sm', 'mr-2', 'first:ml-0', 'mt-1', 'py-1', 'px-2', 'rounded', ...colors)}
+>
+  #{tag}
+</div>

@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Link from '../Link.astro';
+import Tag from '../Tag.astro';
+import { formatPostDate } from '../../utils';
+
+export interface Props {
+  post: CollectionEntry<'posts'>;
+}
+const { post } = Astro.props;
+---
+
+<p class="text-xs">{formatPostDate(post.data.date)}</p>
+<Link to={`/posts/${post.slug}`}>
+  {post.data.title}
+</Link>
+{post.data.description && <p class="mb-1">{post.data.description}</p>}
+<div class="flex flex-row flex-wrap mt-1">
+  {post.data.tags.map((tag) => <Tag tag={tag} />)}
+</div>

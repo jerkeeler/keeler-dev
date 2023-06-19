@@ -18,5 +18,7 @@ module.exports = {
     margin: ['responsive', 'first', 'last'],
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

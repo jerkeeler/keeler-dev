@@ -16,3 +16,12 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+
+## Images
+
+Make sure images are in a reasonable format before adding them to the website. Both for git reasons (not great with large binaries) and to reduce bandwidth usage. I would suggest using [ImageMagick](https://imagemagick.org/script/mogrify.php) and a command like:
+
+```$bash
+mogrify -resize 1000 -quality 75 -format jpg *.*
+```

@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+
+import H1 from '../../components/typography/H1.astro';
+import Layout from '../../layouts/Layout.astro';
+import Tag from '../../components/Tag.astro';
+import { formatPostDate } from '../../utils';
+
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const postEntries = await getCollection('posts');
+  return postEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry, data: entry.data },
+  }));
+}
+
+// 2. When it's time to render, you can get the entry directly from the prop
+export interface Props {
+  entry: any;
+  data: {
+    title: string;
+    description: string;
+    date: Date;
+    tags: string[];
+  };
+}
+const {
+  entry,
+  data: { title, description, tags, date },
+} = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={title} description={description}>
+  <H1>{title}</H1>
+
+  <p class="mb-1 text-gray-700">{formatPostDate(date)}</p>
+
+  <div class="leading-none flex flex-row flex-wrap">
+    {tags.map((tag) => <Tag tag={tag} />)}
+  </div>
+
+  <article class="mt-4 prose prose-a:decoration-primary prose-a:decoration-2 hover:prose-a:decoration-dashed">
+    <Content />
+  </article>
+</Layout>
+
+<style>
+  iframe {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 562px;
+    /* block relative my-0 mx-auto w-full; */
+  }
+</style>

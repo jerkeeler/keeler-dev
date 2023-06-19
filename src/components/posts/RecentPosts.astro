@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+
+import H2 from '../typography/H2.astro';
+import HR from '../typography/HR.astro';
+import PostSummary from './PostSummary.astro';
+import Section from '../Section.astro';
+
+const postEntries = await getCollection('posts');
+const recents = postEntries.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
+---
+
+<Section>
+  <H2 id="recents">Recent Posts</H2>
+  <div>
+    {
+      recents.map((post, idx) => (
+        <div class="mt-6 mb-6 first:mt-0 last:mb-0">
+          {idx > 0 && <HR />}
+          <PostSummary post={post} />
+        </div>
+      ))
+    }
+  </div>
+</Section>

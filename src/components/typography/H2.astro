@@ -1,1 +1,18 @@
-<h2 class="text-3xl mb-4 font-bold"><slot /></h2>
+---
+export interface Props {
+  id?: string;
+}
+const { id } = Astro.props;
+---
+
+{
+  id ? (
+    <h2 class="text-3xl mb-4 font-bold" id={id}>
+      <slot />
+    </h2>
+  ) : (
+    <h2 class="text-3xl mb-4 font-bold">
+      <slot />
+    </h2>
+  )
+}
