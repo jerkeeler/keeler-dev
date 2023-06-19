@@ -5,7 +5,9 @@ import ArchiveList from '../components/posts/ArchiveList.astro';
 import Layout from '../layouts/Layout.astro';
 import H1 from '../components/typography/H1.astro';
 
-const postEntries = await getCollection('posts');
+const postEntries = await getCollection('posts', ({ data }) => {
+  return data.draft !== true || import.meta.env.DEV;
+});
 
 const years: { [key: string]: CollectionEntry<'posts'>[] } = {};
 postEntries.forEach((post) => {
