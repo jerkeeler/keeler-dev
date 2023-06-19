@@ -6,19 +6,31 @@ export interface Props {
   title: string;
   description?: string;
 }
-const { title, description = 'Keeler — adventurer, developer, a drop of the world.' } = Astro.props;
+const { title, description = "Keeler's slice of the universe. Thoughts, ramblings, and experiments abound." } = Astro.props;
+const fullTitle = `Keeler - ${title}`;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
+
+
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="theme-color" content="#24d1f8" />
+
+    <meta property="og:title" content={fullTitle}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content="/minimal_j.svg">
+    <meta property="og:image:type" content="image/svg">
+    <meta property="og:image:alt" content="Minimalistic geometric light blue J">
+
+    <link rel="apple-touch-icon" href="/minimal_j.svg">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Keeler - {title}</title>
+    <link rel="sitemap" href="/sitemap-index.xml">
   </head>
 
   <body>

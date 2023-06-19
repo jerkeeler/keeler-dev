@@ -27,7 +27,7 @@ taggedPosts.forEach((post) => {
 });
 ---
 
-<Layout title={tag}>
+<Layout title={tag} description={`Keeler's posts related to ${tag}`}>
   <H1>Posts ({tag})</H1>
   {
     Object.keys(years)

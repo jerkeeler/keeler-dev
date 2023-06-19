@@ -4,6 +4,7 @@ import Github from './icons/Github.astro';
 import HR from './typography/HR.astro';
 import IconLink from './IconLink.astro';
 import Linkedin from './icons/Linkedin.astro';
+import RSS from './icons/RSS.astro';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const currentDate = new Date();
@@ -26,6 +27,12 @@ const currentDate = new Date();
   <div>
     <IconLink to="https://www.linkedin.com/in/jeremy-keeler-74567891/" ariaLabel="Link to Keeler's LinkedIn">
       <Linkedin />
+    </IconLink>
+  </div>
+  <FooterItemSeparator />
+  <div>
+    <IconLink to="/rss.xml" ariaLabel="Link to Keeler's RSS Feed">
+      <RSS />
     </IconLink>
   </div>
 </div>

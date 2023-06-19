@@ -4,5 +4,5 @@ Disallow: /contact/success
 Disallow: /admin
 Disallow: /healthcheck
 Disallow: /media
-Sitemap: https://keeler.dev/sitemap.xml
+Sitemap: https://keeler.dev/sitemap-index.xml
 Host: https://keeler.dev
