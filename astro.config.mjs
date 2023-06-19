@@ -5,7 +5,7 @@ import tailwind from '@astrojs/tailwind';
 
 import rehypeFigure from 'rehype-figure';
 import rehypeKatex from 'rehype-katex';
-import remarkMath from 'remark-math'
+import remarkMath from 'remark-math';
 
 // https://astro.build/config
 export default defineConfig({

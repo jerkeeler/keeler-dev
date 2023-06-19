@@ -1,0 +1,38 @@
+---
+import { getCollection, CollectionEntry } from 'astro:content';
+
+import H1 from '../../components/typography/H1.astro';
+import Layout from '../../layouts/Layout.astro';
+import ArchiveList from '../../components/posts/ArchiveList.astro';
+
+// 1. Generate a new path for every unique tag
+export async function getStaticPaths() {
+  const postEntries = await getCollection('posts');
+  const tags = [...new Set(postEntries.map((entry) => entry.data.tags).flat())];
+  return tags.map((tag) => ({
+    params: { tag: tag },
+    props: { tag },
+  }));
+}
+
+const { tag } = Astro.props;
+const allPostEntries = await getCollection('posts');
+const taggedPosts = allPostEntries.filter((entry) => entry.data.tags.includes(tag));
+
+const years: { [key: string]: CollectionEntry<'posts'>[] } = {};
+taggedPosts.forEach((post) => {
+  const year = post.data.date.getFullYear();
+  if (!years[year]) years[year] = [];
+  years[year].push(post);
+});
+---
+
+<Layout title={tag}>
+  <H1>Posts ({tag})</H1>
+  {
+    Object.keys(years)
+      .sort()
+      .reverse()
+      .map((year) => <ArchiveList year={year} posts={years[year]} />)
+  }
+</Layout>
