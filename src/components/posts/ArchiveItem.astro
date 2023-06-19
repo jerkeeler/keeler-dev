@@ -6,7 +6,6 @@ export interface Props {
   post: CollectionEntry<'posts'>;
 }
 const { post } = Astro.props;
-
 ---
 
 <li class="mt-6 first:mt-0"><PostSummary post={post} /></li>

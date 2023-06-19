@@ -46,12 +46,13 @@ const { Content } = await entry.render();
   </article>
 </Layout>
 
-<style>
-  iframe {
-    display: block;
-    position: relative;
-    width: 100%;
-    max-width: 562px;
-    /* block relative my-0 mx-auto w-full; */
+<style is:global>
+  figcaption {
+    text-align: center;
+    font-style: italic;
+  }
+
+  .katex-html {
+    display: none;
   }
 </style>

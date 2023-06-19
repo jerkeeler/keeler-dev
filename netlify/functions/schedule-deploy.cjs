@@ -7,7 +7,7 @@ const buildHandler = async () => {
   await fetch(BUILD_HOOK, {
     method: 'POST',
   }).then((response) => {
-    console.log("Complete! Go to Netlify to see the build being triggered.");
+    console.log('Complete! Go to Netlify to see the build being triggered.');
   });
 
   return {

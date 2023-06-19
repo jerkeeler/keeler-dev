@@ -1,4 +1,4 @@
- # keeler.dev
+# keeler.dev
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/593e4c46-fc9a-4444-8847-8eeb6f089ed0/deploy-status)](https://app.netlify.com/sites/keeler-dev/deploys)
 
@@ -16,7 +16,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
 
 ## Images
 

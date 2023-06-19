@@ -30,7 +30,9 @@ And of course the passes were amazing. Muir Pass is just absolutely stunning.
 
 I also documented our shenanigans on video. (Edited montage coming soon!) As we descended the snowfields on the South side of Muir Pass we couldn't help but feel like adventurers.
 
-https://www.youtube.com/watch?v=B0JgTQIZ6-c
+<div class="flex justify-center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B0JgTQIZ6-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 Honestly, there are just too many amazing locales on this hike to list! So here are simply some of my favorite photos:
 
@@ -54,6 +56,6 @@ Honestly, there are just too many amazing locales on this hike to list! So here 
 
 ![Whitney summit](/assets/images/jmt/whitney_summit.webp "Whitney's shadow and the sunrise on our final day.")
 
-![Me at the summit of My. Whitney](/assets/images/jmt/me_at_the_summit.webp 'Me triumphantly summiting the highest point in the contiguous United States.')
+![Me at the summit of Mt. Whitney](/assets/images/jmt/me_at_the_summit.webp 'Me triumphantly summiting the highest point in the contiguous United States.')
 
 Seeing all of these photos on here, one thinks maybe I should start an "albums" or "gallery" page on this site 🤔 Check back later for more detailed posts on various aspects of my JMT trip.

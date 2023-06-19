@@ -17,10 +17,10 @@ postEntries.forEach((post) => {
 
 <Layout title="posts" description="List of all of Keeler's blog posts.">
   <H1>Posts</H1>
-  {Object.keys(years)
-    .sort()
-    .reverse()
-    .map((year) => (
-      <ArchiveList year={year} posts={years[year]} />
-    ))}
+  {
+    Object.keys(years)
+      .sort()
+      .reverse()
+      .map((year) => <ArchiveList year={year} posts={years[year]} />)
+  }
 </Layout>
