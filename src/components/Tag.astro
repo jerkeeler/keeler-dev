@@ -29,17 +29,6 @@ const bgClasses = [
   ['bg-rose-200', 'hover:bg-rose-300'],
 ];
 
-// const bgClasses = [
-//   ['bg-green-200'],
-//   ['bg-red-200'],
-//   ['bg-orange-200'],
-//   ['bg-blue-200'],
-//   ['bg-lime-200'],
-//   ['bg-cyan-200'],
-//   ['bg-violet-200'],
-//   ['bg-rose-200'],
-// ];
-
 export interface Props {
   tag: string;
 }
@@ -51,7 +40,7 @@ const colors = bgClasses[hash % bgClasses.length];
 
 <a
   href={`/tags/${tag}`}
-  class={classnames('text-sm', 'mr-2', 'first:ml-0', 'mt-1', 'py-1', 'px-2', 'rounded', ...colors)}
+  class={classnames('text-xs', 'mr-2', 'first:ml-0', 'mt-1', 'py-1', 'px-2', 'rounded', ...colors)}
 >
   #{tag}
 </a>

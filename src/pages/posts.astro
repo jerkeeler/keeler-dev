@@ -4,10 +4,13 @@ import { getCollection, CollectionEntry } from 'astro:content';
 import ArchiveList from '../components/posts/ArchiveList.astro';
 import Layout from '../layouts/Layout.astro';
 import H1 from '../components/typography/H1.astro';
+import Tag from '../components/Tag.astro';
 
 const postEntries = await getCollection('posts', ({ data }) => {
   return data.draft !== true || import.meta.env.DEV;
 });
+
+const tags = [...new Set(postEntries.map((entry) => entry.data.tags).flat())].sort();
 
 const years: { [key: string]: CollectionEntry<'posts'>[] } = {};
 postEntries.forEach((post) => {
@@ -19,6 +22,9 @@ postEntries.forEach((post) => {
 
 <Layout title="posts" description="List of all of Keeler's blog posts.">
   <H1>Posts</H1>
+  <div class="my-4">
+    {tags.map((tag) => <Tag tag={tag} />)}
+  </div>
   {
     Object.keys(years)
       .sort()

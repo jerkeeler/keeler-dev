@@ -10,10 +10,10 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<p class="text-xs">{formatPostDate(post.data.date)}</p>
 <Link to={`/posts/${post.slug}`}>
   {post.data.title}
 </Link>
+<p class="text-xs">{formatPostDate(post.data.date)}</p>
 {post.data.description && <p class="mb-1">{post.data.description}</p>}
 <div class="flex flex-row flex-wrap mt-1">
   {post.data.tags.map((tag) => <Tag tag={tag} />)}

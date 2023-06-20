@@ -1,6 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import PostSummary from './PostSummary.astro';
+import Link from '../Link.astro';
+import Tag from '../Tag.astro';
+import { formatPostDate } from '../../utils';
 
 export interface Props {
   post: CollectionEntry<'posts'>;
@@ -8,4 +10,15 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<li class="mt-6 first:mt-0"><PostSummary post={post} /></li>
+<li class="mt-2 first:mt-0">
+  <p>
+    <Link to={`/posts/${post.slug}`}>
+      {post.data.title}
+    </Link>
+    —
+    <span class="text-xs">{formatPostDate(post.data.date)}</span>
+  </p>
+  <div class="flex flex-row flex-wrap">
+    {post.data.tags.map((tag) => <Tag tag={tag} />)}
+  </div>
+</li>
