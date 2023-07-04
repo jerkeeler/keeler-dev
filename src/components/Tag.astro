@@ -15,7 +15,7 @@ function stringToHash(inputStr: string): number {
     hash = hash & hash;
   }
 
-  return hash;
+  return Math.abs(hash);
 }
 
 const bgClasses = [
