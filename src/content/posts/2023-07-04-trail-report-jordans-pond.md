@@ -22,12 +22,12 @@ The Jordan's Pond Loop is a great family hike and good for beginners. Going coun
 
 Both [a gpx track](/assets/trails/jordans_pond_south_bubble/trail.gpx) and [a pdf version](/assets/trails/jordans_pond_south_bubble/map.pdf)[^1] of the map are available.
 
-Instead of being completely flat the hike up south bubble added an extra 171m (562') elevation gain.
+Instead of being completely flat the hike up South Bubble added an extra 171m (562') elevation gain.
 
 <!-- Insert elevation profile -->
 ![Elevation profile of the route.](/assets/trails/jordans_pond_south_bubble/elevation_profile.webp)
 
-We did our hike clockwise around the lake, which led us to ascend South Bubble from the north and descend the south face. Mistake! **If completing this loop with the spur, I would suggest going counterclockwise:** ascending the South face and descending on the north side. One can tell by the elevation profile that the south face is *much* steeper. It's mostly a very steep rock scramble down (I think it'd be much easier to go up). And for those asking, on and off trail, **NO**. Your dog cannot make it up the rock scramble on the south face.
+We did our hike clockwise around the lake, which led us to ascend South Bubble from the north and descend the south face. Mistake! **If completing this loop with the spur, I would suggest going counterclockwise:** ascending the south face and descending on the north side. One can tell by the elevation profile that the south face is *much* steeper. It's mostly a very steep rock scramble down (I think it'd be much easier to go up). And for those asking, on and off trail, **NO**. Your dog cannot make it up the rock scramble on the south face.
 
 <!-- Insert image of descent -->
 ![A look back at our descent down the south face. That's a 6 foot vertical wall you have to go down, much easier to go up...](/assets/trails/jordans_pond_south_bubble/descent_south_face.webp)
