@@ -16,6 +16,22 @@ import Section from './Section.astro';
   <H2 id="projects">Projects</H2>
 
   <Project>
+    <ProjectLogo img={AoestatsLogo} alt="Aoestats logo" />
+    <ProjectDescription>
+      <P><B><Link to="https://aoestats.io">aoestats.io</Link></B></P>
+      <P>
+        aoestats.io is a website I created that periodically, and automatically, calculates statistics for the
+        <Link to="https://www.ageofempires.com/">Age of Empires II</Link>
+        video game. The backend and stats code is written with Python and Django. Stats are calculated daily. The frontend
+        is written with
+        <Link to="https://vuejs.org/">Vue</Link> and
+        <Link to="https://nuxt.com/">Nuxt</Link>. The site is hosted on a
+        <Link to="https://www.hetzner.com/">Hetzner</Link> VPS.
+      </P>
+    </ProjectDescription>
+  </Project>
+
+  <Project>
     <ProjectLogo img={ChoralcatLogo} alt="Choralcat logo" />
     <ProjectDescription>
       <P><B><Link to="https://choralcat.org">Choralcat</Link></B></P>
@@ -35,19 +51,4 @@ import Section from './Section.astro';
     </ProjectDescription>
   </Project>
 
-  <Project>
-    <ProjectLogo img={AoestatsLogo} alt="Aoestats logo" />
-    <ProjectDescription>
-      <P><B><Link to="https://aoestats.io">aoestats.io</Link></B></P>
-      <P>
-        aoestats.io is a website I created that periodically, and automatically, calculates statistics for the
-        <Link to="https://www.ageofempires.com/">Age of Empires II</Link>
-        video game. The backend and stats code is written with Python and Django. Stats are calculated daily. The frontend
-        is written with
-        <Link to="https://vuejs.org/">Vue</Link> and
-        <Link to="https://nuxt.com/">Nuxt</Link>. The site is hosted on a
-        <Link to="https://www.hetzner.com/">Hetzner</Link> VPS.
-      </P>
-    </ProjectDescription>
-  </Project>
 </Section>
