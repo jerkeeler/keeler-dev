@@ -6,9 +6,7 @@ import Layout from '../layouts/Layout.astro';
 import H1 from '../components/typography/H1.astro';
 import Tag from '../components/Tag.astro';
 
-const postEntries = await getCollection('posts', ({ data }) => {
-  return data.draft !== true || import.meta.env.DEV;
-});
+const postEntries = await getCollection('posts', ({ data }) => !data.draft || import.meta.env.DEV);
 
 const tags = [...new Set(postEntries.map((entry) => entry.data.tags).flat())].sort();
 

@@ -6,9 +6,7 @@ import HR from '../typography/HR.astro';
 import PostSummary from './PostSummary.astro';
 import Section from '../Section.astro';
 
-const postEntries = await getCollection('posts', ({ data }) => {
-  return data.draft !== true || import.meta.env.DEV;
-});
+const postEntries = await getCollection('posts', ({ data }) => !data.draft || import.meta.env.DEV);
 const recents = postEntries.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
 ---
 

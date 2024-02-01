@@ -7,7 +7,7 @@ import ArchiveList from '../../components/posts/ArchiveList.astro';
 
 // 1. Generate a new path for every unique tag
 export async function getStaticPaths() {
-  const postEntries = await getCollection('posts');
+  const postEntries = await getCollection('posts', ({ data }) => !data.draft || import.meta.env.DEV);
   const tags = [...new Set(postEntries.map((entry) => entry.data.tags).flat())];
   return tags.map((tag) => ({
     params: { tag: tag },
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { tag } = Astro.props;
-const allPostEntries = await getCollection('posts');
+const allPostEntries = await getCollection('posts', ({ data }) => !data.draft || import.meta.env.DEV);
 const taggedPosts = allPostEntries.filter((entry) => entry.data.tags.includes(tag));
 
 const years: { [key: string]: CollectionEntry<'posts'>[] } = {};
