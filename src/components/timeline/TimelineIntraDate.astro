@@ -1,0 +1,51 @@
+---
+import dayjs from 'dayjs';
+
+export interface Props {
+  startDate: Date;
+  endDate?: Date;
+}
+
+const { startDate, endDate } = Astro.props;
+const startDateStr = startDate.toLocaleDateString('en-US', {
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+
+let finalDate = endDate;
+if (!finalDate) {
+    finalDate = new Date();
+}
+const endDateStr = finalDate.toLocaleDateString('en-US', {
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+
+const start = dayjs(startDate);
+const end = dayjs(finalDate);
+let diffMonth = end.diff(start, 'month');
+const diffYear = end.diff(start, 'year');
+diffMonth = diffMonth - diffYear * 12;
+
+let diffStr = '';
+if (diffYear > 0) {
+  diffStr = `${diffYear} year`;
+}
+if (diffYear > 1) {
+  diffStr += 's';
+}
+
+if (diffMonth > 0 && diffYear > 0) {
+  diffStr += `, ${diffMonth} month`;
+} else if (diffMonth > 0 && diffYear == 0) {
+  diffStr += `${diffMonth} month`;
+}
+
+if (diffMonth > 1) {
+  diffStr += 's';
+}
+---
+<!-- ({startDateStr} - {endDate ? endDateStr : 'current'},  -->
+<span>({diffStr}{endDate ? '' : ', current'})</span>

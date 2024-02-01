@@ -8,12 +8,14 @@ import UMLogo from '../assets/university_of_michigan.png';
 import B from './typography/B.astro';
 import H2 from './typography/H2.astro';
 import H5 from './typography/H5.astro';
+import H6 from './typography/H6.astro';
 import Link from './Link.astro';
 import P from './typography/P.astro';
 import Section from './Section.astro';
 import TimelineContent from './timeline/TimelineContent.astro';
 import TimelineItem from './timeline/TimelineItem.astro';
 import TimelineLogo from './timeline/TimelineLogo.astro';
+import TimelineIntraDate from './timeline/TimelineIntraDate.astro';
 ---
 
 <Section>
@@ -22,13 +24,26 @@ import TimelineLogo from './timeline/TimelineLogo.astro';
   <TimelineItem>
     <TimelineContent startDate={new Date('2022-01-01')}>
       <H5>
-        Staff Software Engineer at <Link to="https://affirm.com">Affirm</Link>
+        Engineering at <Link to="https://affirm.com">Affirm</Link>
       </H5>
+      <H6>
+        Engineering Manager
+        <TimelineIntraDate startDate={new Date('2024-01-01')} />
+      </H6>
+      <H6>
+        Staff Software Engineer
+        <TimelineIntraDate startDate={new Date('2023-07-01')} endDate={new Date('2024-01-01')} />
+      </H6>
+      <H6>
+        Senior Software Engineer
+        <TimelineIntraDate startDate={new Date('2022-01-01')} endDate={new Date('2023-07-01')} />
+      </H6>
       <P>
         I work on the Capital Engineering team at Affirm, designing and implementing data pipelines to move and process
         loans to/from our investors. In addition, my team and I manage investor reporting, management, and
         configuration.
       </P>
+      <!-- <TimelineIntraDate startDate={new Date('2023-07-01')} endDate={new Date('2024-01-01')}/> -->
     </TimelineContent>
     <TimelineLogo img={AffirmLogo} alt="Affirm logo" />
   </TimelineItem>
