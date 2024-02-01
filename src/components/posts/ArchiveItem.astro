@@ -11,12 +11,14 @@ const { post } = Astro.props;
 ---
 
 <li class="mt-2 first:mt-0">
-  <p>
+  <p class="grid sm:flex">
     <Link to={`/posts/${post.slug}`}>
       {post.data.title}
     </Link>
-    —
-    <span class="text-xs">{formatPostDate(post.data.date)}</span>
+    <span>
+      <span class="text-xs hidden sm:inline">&nbsp;—</span>
+      <span class="text-xs">{formatPostDate(post.data.date)}</span>
+    </span>
   </p>
   <div class="flex flex-row flex-wrap">
     {post.data.tags.map((tag) => <Tag tag={tag} />)}
