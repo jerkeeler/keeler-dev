@@ -15,7 +15,7 @@ const startDateStr = startDate.toLocaleDateString('en-US', {
 
 let finalDate = endDate;
 if (!finalDate) {
-    finalDate = new Date();
+  finalDate = new Date();
 }
 const endDateStr = finalDate.toLocaleDateString('en-US', {
   month: 'long',
@@ -47,5 +47,6 @@ if (diffMonth > 1) {
   diffStr += 's';
 }
 ---
+
 <!-- ({startDateStr} - {endDate ? endDateStr : 'current'},  -->
 <span>({diffStr}{endDate ? '' : ', current'})</span>

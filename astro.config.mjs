@@ -13,8 +13,5 @@ export default defineConfig({
     rehypePlugins: [rehypeFigure, rehypeKatex],
   },
   site: 'https://keeler.dev',
-  integrations: [
-    sitemap(),
-    tailwind(),
-  ],
+  integrations: [sitemap(), tailwind()],
 });
