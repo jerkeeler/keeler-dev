@@ -45,4 +45,5 @@ Although we took the difficult route down, the spur was/is 100% worth it. The vi
 The Jordan's Pond Loop with South Bubble spur is a great hike of moderate difficulty. It can be completed relatively quickly, leaving you time for another hike in the same day. The views are amazing, and finishing the hike up with tea and popovers is a real treat. **Would definitely recommend, 6/10 hike[^2].**
 
 [^1]: Maps, elevation profile, and gpx route were generated using [Caltopo](https://caltopo.com/). I would highly recommend it for planning hikes and backpacking trips.
+
 [^2]: Rating scale is still being calibrated, 6/10 is solid, I only want really really good hikes to be 7+.

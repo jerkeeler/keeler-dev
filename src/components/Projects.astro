@@ -1,6 +1,7 @@
 ---
 import AoestatsLogo from '../assets/aoestats_logo.png';
 import ChoralcatLogo from '../assets/cc-icon-primary.png';
+import AomstatsLogo from '../assets/aomstats.png';
 
 import B from './typography/B.astro';
 import H2 from './typography/H2.astro';
@@ -14,6 +15,19 @@ import Section from './Section.astro';
 
 <Section>
   <H2 id="projects">Projects</H2>
+
+  <Project>
+    <ProjectLogo img={AomstatsLogo} alt="Aomstats logo" />
+    <ProjectDescription>
+      <P><B><Link to="https://aomstats.io">aomstats.io</Link></B></P>
+
+      <P>
+        aomstats.io is a website that tracks God win rates and players stats for
+        <Link to="https://www.ageofempires.com/games/aom/age-of-mythology-retold/">Age of Mythology: Retold</Link>. It
+        is written using Python on the backend for data munging and scrapping. It uses Svelte and SvelteKit on frontend.
+      </P>
+    </ProjectDescription>
+  </Project>
 
   <Project>
     <ProjectLogo img={AoestatsLogo} alt="Aoestats logo" />
