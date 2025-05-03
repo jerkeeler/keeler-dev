@@ -7,7 +7,7 @@ import PostSummary from './PostSummary.astro';
 import Section from '../Section.astro';
 
 const postEntries = await getCollection('posts', ({ data }) => !data.draft || import.meta.env.DEV);
-const recents = postEntries.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
+const recents = postEntries.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 2);
 ---
 
 <Section>

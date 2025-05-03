@@ -2,6 +2,7 @@
 import AoestatsLogo from '../assets/aoestats_logo.png';
 import ChoralcatLogo from '../assets/cc-icon-primary.png';
 import AomstatsLogo from '../assets/aomstats.png';
+import RestorationLogo from '../assets/restoration.png';
 
 import B from './typography/B.astro';
 import H2 from './typography/H2.astro';
@@ -15,6 +16,21 @@ import Section from './Section.astro';
 
 <Section>
   <H2 id="projects">Projects</H2>
+
+  <Project>
+    <ProjectLogo img={RestorationLogo} alt="Restoration logo" />
+    <ProjectDescription>
+      <P><B><Link to="https://github.com/jerkeeler/restoration">restoration</Link></B></P>
+      <P>
+        Restoration is a replay parser for <Link
+          to="https://store.steampowered.com/app/1934680/Age_of_Mythology_Retold/">Age of Mythology: Retold</Link
+        > written in <Link to="https://go.dev/">Go</Link>. The replay format for AoM is not publicly documented. With
+        the help of some community members, we have reversed engineered a majority of the file format, which lists game
+        commands—actions taken by each player. This parser takes those raw commands and formats them into a sane,
+        human readable JSON format (and does it quickly).
+      </P>
+    </ProjectDescription>
+  </Project>
 
   <Project>
     <ProjectLogo img={AomstatsLogo} alt="Aomstats logo" />
