@@ -36,14 +36,14 @@ const { Content } = await entry.render();
 <Layout title={title} description={description}>
   <H1>{title}</H1>
 
-  <p class="mb-1 text-gray-700">{formatPostDate(date)}</p>
+  <p class="mb-1 text-gray-700 dark:text-gray-300">{formatPostDate(date)}</p>
 
   <div class="leading-none flex flex-row flex-wrap">
     {tags.map((tag) => <Tag tag={tag} />)}
   </div>
 
   <article
-    class="mt-4 prose prose-a:decoration-primary prose-a:decoration-2 hover:prose-a:decoration-dashed prose-hr:my-3"
+    class="mt-4 prose dark:prose-invert prose-a:decoration-primary prose-a:decoration-2 hover:prose-a:decoration-dashed prose-hr:my-3"
   >
     <Content />
   </article>

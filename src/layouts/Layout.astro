@@ -14,6 +14,16 @@ const fullTitle = `Keeler - ${title}`;
 <!doctype html>
 <html lang="en">
   <head>
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
@@ -46,8 +56,8 @@ const fullTitle = `Keeler - ${title}`;
       src="https://plausible.aomstats.io/js/script.js"></script>
   </head>
 
-  <body>
-    <div class="flex justify-center min-h-screen text-gray-800">
+  <body class="bg-white dark:bg-gray-900">
+    <div class="flex justify-center min-h-screen text-gray-800 dark:text-gray-100">
       <div class="w-full max-w-screen-lg flex-grow flex flex-col md:flex-row-reverse p-4">
         <Navbar />
         <div class="flex-grow overflow-auto md:mr-40">
