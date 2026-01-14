@@ -10,15 +10,6 @@ import Sun from './icons/Sun.astro';
 
 <script>
   const button = document.getElementById('theme-toggle');
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-  function setTheme(isDark: boolean) {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }
 
   function toggleTheme() {
     const isDark = document.documentElement.classList.contains('dark');
@@ -30,14 +21,6 @@ import Sun from './icons/Sun.astro';
       localStorage.setItem('theme', 'dark');
     }
   }
-
-  // Listen for system preference changes (only apply if no manual preference set)
-  mediaQuery.addEventListener('change', (e) => {
-    const stored = localStorage.getItem('theme');
-    if (!stored) {
-      setTheme(e.matches);
-    }
-  });
 
   button?.addEventListener('click', toggleTheme);
 </script>

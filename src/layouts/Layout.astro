@@ -8,7 +8,7 @@ export interface Props {
 }
 const { title, description = "Keeler's slice of the universe. Thoughts, ramblings, and experiments abound." } =
   Astro.props;
-const fullTitle = `Keeler - ${title}`;
+const fullTitle = `${title} - Keeler`;
 ---
 
 <!doctype html>
@@ -17,9 +17,7 @@ const fullTitle = `Keeler - ${title}`;
     <script is:inline>
       (function () {
         const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = stored || (prefersDark ? 'dark' : 'light');
-        if (theme === 'dark') {
+        if (stored === 'dark') {
           document.documentElement.classList.add('dark');
         }
       })();
