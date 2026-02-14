@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import H1 from '../../components/typography/H1.astro';
+import LikeButton from '../../components/LikeButton.astro';
 import Layout from '../../layouts/Layout.astro';
 import Tag from '../../components/Tag.astro';
 import { formatPostDate } from '../../utils';
@@ -47,6 +48,10 @@ const { Content } = await entry.render();
       class="mt-4 prose dark:prose-invert prose-a:decoration-primary prose-a:decoration-2 hover:prose-a:decoration-dashed prose-hr:my-3"
     >
       <Content />
+    </div>
+
+    <div class="mt-8">
+      <LikeButton slug={entry.slug} />
     </div>
   </article>
 </Layout>
