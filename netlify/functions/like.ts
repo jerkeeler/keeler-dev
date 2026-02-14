@@ -33,6 +33,7 @@ export default async (request: Request, context: Context) => {
   }
 
   if (!validSlugs.includes(slug)) {
+    console.warn(`Invalid slug requested: "${slug}"`);
     return new Response(JSON.stringify({ error: 'Invalid slug' }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
@@ -49,6 +50,8 @@ export default async (request: Request, context: Context) => {
     const currentIpLikes = ipData?.count ?? 0;
 
     if (currentIpLikes >= MAX_LIKES_PER_IP) {
+      console.log(`Rate limit hit for slug="${slug}"`);
+
       const totalData = (await store.get(`count:${slug}`, { type: 'json' })) as { count: number } | null;
       return new Response(
         JSON.stringify({ error: 'Like limit reached', likes: totalData?.count ?? 0, userLikes: MAX_LIKES_PER_IP }),
@@ -93,10 +96,13 @@ export default async (request: Request, context: Context) => {
 
     await store.setJSON(`ip:${slug}:${hashedIp}`, { count: currentIpLikes + 1 });
 
+    console.log(`Like recorded for slug="${slug}" total=${newTotal}`);
+
     return new Response(JSON.stringify({ likes: newTotal, userLikes: currentIpLikes + 1 }), {
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch {
+  } catch (err) {
+    console.error(`Failed to save like for slug="${slug}"`, err);
     return new Response(JSON.stringify({ error: 'Failed to save like, please try again' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
