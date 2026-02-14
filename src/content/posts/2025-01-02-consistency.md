@@ -4,6 +4,7 @@ date: 2026-01-02
 title: 'The Quiet Power of Repetition'
 description: "A reflection on why real progress is built in the unsexy middle: the boring reps, the easy miles, the five-minute practice sessions. In 2026 I'm betting on consistent daily routines to compound—music, fitness, writing-and make life feel more anchored."
 tags: ['consistency', 'life philosophy']
+issueNumber: 16
 ---
 
 Consistency is boring.

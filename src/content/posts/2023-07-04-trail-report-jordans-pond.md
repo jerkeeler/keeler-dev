@@ -4,6 +4,7 @@ date: 2023-07-04
 title: "Trail Report: Jordan's Pond"
 description: "I went to Acadia National Park in June. This is a trail report for the Jordan's Pond loop with South Bubble spur."
 tags: ['hiking', 'trail report']
+issueNumber: 15
 ---
 
 Natalie and I visited [Acadia National Park](https://www.nps.gov/acad/index.htm) for 2 days at the beginning of June (June 6th and June 7th). While the weather was generally overcast and drizzly, the rain let up now and then and the sun poked through at the climax of our big hike for the trip: Jordan's Pond Loop with South Bubble Spur.

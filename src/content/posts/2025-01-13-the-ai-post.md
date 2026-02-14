@@ -4,6 +4,7 @@ date: 2026-01-14
 title: 'The AI Post'
 description: "It's the post about AI. Yes, it's a thing. I don't like it, but we'll all need to know how to use it. There's not much more in this article."
 tags: ['ai']
+issueNumber: 17
 ---
 
 I'll keep this short. AI is happening. Vibe coding is happening. Whether you and I like it or not, it's here.
