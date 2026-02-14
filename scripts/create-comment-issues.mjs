@@ -31,7 +31,7 @@ for (const { filename, filePath, data, content } of postsNeedingIssues) {
       owner,
       repo,
       title: `Comments: ${data.title}`,
-      body: `Comment thread for [${data.title}](https://keeler.dev/posts/${slug})\n\nThis issue was auto-created.`,
+      body: `Comment thread for [${data.title}](https://keeler.dev/posts/${slug})\n\nComments posted here will appear on the blog post. Please keep discussion respectful and on-topic.`,
       labels: ['blog-comments'],
     });
 

@@ -154,6 +154,7 @@ async function handlePost(req) {
     }
 
     if (ghResponse.status !== 201) {
+      console.error(`Failed to post comment to issue #${issueNumber}: GitHub returned ${ghResponse.status}`);
       return new Response(JSON.stringify({ error: 'Failed to post comment' }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
@@ -161,6 +162,7 @@ async function handlePost(req) {
     }
 
     const c = await ghResponse.json();
+    console.log(`Comment posted to issue #${issueNumber} by ${c.user?.login ?? 'unknown'} (comment ID: ${c.id})`);
     return new Response(
       JSON.stringify({
         id: c.id,

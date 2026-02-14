@@ -15,7 +15,7 @@ const { issueNumber } = Astro.props;
   <!-- Auth/Form area -->
   <div id="comments-auth" class="mt-6">
     <!-- Shown when NOT authenticated -->
-    <div id="auth-prompt" class="hidden">
+    <div id="auth-prompt" class="hidden flex items-center gap-4">
       <a
         id="sign-in-btn"
         href="#"
@@ -27,6 +27,15 @@ const { issueNumber } = Astro.props;
           ></path>
         </svg>
         Sign in with GitHub to comment
+      </a>
+      <a
+        id="view-on-github-unauth"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        class="text-sm text-gray-500 hover:underline"
+      >
+        View on GitHub
       </a>
     </div>
 
@@ -185,8 +194,13 @@ const { issueNumber } = Astro.props;
     if (signInBtn) {
       signInBtn.href = `/api/auth/start?redirect=${encodeURIComponent(window.location.pathname)}`;
     }
+    const viewOnGithubUnauth = document.getElementById('view-on-github-unauth') as HTMLAnchorElement | null;
+    const issueUrl = `https://github.com/jerkeeler/keeler-dev/issues/${issueNumber}`;
     if (viewOnGithub) {
-      viewOnGithub.href = `https://github.com/jerkeeler/keeler-dev/issues/${issueNumber}`;
+      viewOnGithub.href = issueUrl;
+    }
+    if (viewOnGithubUnauth) {
+      viewOnGithubUnauth.href = issueUrl;
     }
 
     function getGhUser(): { login: string; avatarUrl: string } | null {
