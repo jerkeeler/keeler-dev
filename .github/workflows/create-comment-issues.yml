@@ -1,0 +1,32 @@
+# SETUP REQUIRED:
+# 1. Create a GitHub PAT with `public_repo` scope
+# 2. Add it as a repository secret named COMMENT_ISSUES_PAT
+# 3. Create a "blog-comments" label on the repository
+name: Create Comment Issues
+on:
+  push:
+    branches: [main]
+    paths: ['src/content/posts/**']
+
+jobs:
+  create-issues:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.COMMENT_ISSUES_PAT }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: node scripts/create-comment-issues.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/content/posts/
+          git diff --staged --quiet || (git commit -m "chore: add issue numbers for new blog posts [skip ci]" && git push)
