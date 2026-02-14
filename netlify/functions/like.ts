@@ -1,6 +1,7 @@
 import { getStore } from '@netlify/blobs';
 import { createHash } from 'node:crypto';
 import type { Context } from '@netlify/functions';
+import validSlugs from './valid-slugs.json' with { type: 'json' };
 
 const STORE_NAME = 'likes';
 const MAX_LIKES_PER_IP = 10;
@@ -26,6 +27,13 @@ export default async (request: Request, context: Context) => {
 
   if (!slug) {
     return new Response(JSON.stringify({ error: 'slug is required' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  if (!validSlugs.includes(slug)) {
+    return new Response(JSON.stringify({ error: 'Invalid slug' }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
     });

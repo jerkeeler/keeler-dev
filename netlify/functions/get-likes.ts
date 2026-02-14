@@ -1,5 +1,6 @@
 import { getStore } from '@netlify/blobs';
 import type { Context } from '@netlify/functions';
+import validSlugs from './valid-slugs.json' with { type: 'json' };
 
 export default async (request: Request, _context: Context) => {
   const url = new URL(request.url);
@@ -7,6 +8,13 @@ export default async (request: Request, _context: Context) => {
 
   if (!slug) {
     return new Response(JSON.stringify({ error: 'slug parameter is required' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  if (!validSlugs.includes(slug)) {
+    return new Response(JSON.stringify({ error: 'Invalid slug' }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
     });
