@@ -11,6 +11,56 @@ const { issueNumber } = Astro.props;
   <div id="comments-error" class="hidden text-red-600 dark:text-red-400"></div>
   <div id="comments-empty" class="hidden text-gray-500 dark:text-gray-400">No comments yet.</div>
   <div id="comments-list" class="space-y-4"></div>
+
+  <!-- Auth/Form area -->
+  <div id="comments-auth" class="mt-6">
+    <!-- Shown when NOT authenticated -->
+    <div id="auth-prompt" class="hidden">
+      <a
+        id="sign-in-btn"
+        href="#"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="currentColor"
+          ><path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+          ></path></svg
+        >
+        Sign in with GitHub to comment
+      </a>
+    </div>
+
+    <!-- Shown when authenticated -->
+    <div id="comment-form-wrapper" class="hidden">
+      <div class="flex items-center gap-2 mb-3">
+        <img id="user-avatar" class="w-6 h-6 rounded-full" alt="" />
+        <span id="user-name" class="text-sm dark:text-gray-300"></span>
+        <span class="text-gray-400">&middot;</span>
+        <a id="sign-out-link" href="/api/auth/logout" class="text-sm text-gray-500 hover:underline">Sign out</a>
+      </div>
+      <form id="comment-form">
+        <textarea
+          id="comment-body"
+          rows="4"
+          placeholder="Write a comment... (Markdown supported)"
+          class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 dark:text-white resize-y"
+        ></textarea>
+        <div class="flex items-center justify-between mt-2">
+          <a id="view-on-github" href="#" target="_blank" rel="noopener" class="text-sm text-gray-500 hover:underline"
+            >View on GitHub</a
+          >
+          <button
+            type="submit"
+            id="submit-btn"
+            class="px-4 py-2 bg-primary text-white rounded hover:opacity-90 disabled:opacity-50 transition-opacity"
+          >
+            Comment
+          </button>
+        </div>
+        <div id="form-error" class="hidden mt-2 text-sm text-red-600 dark:text-red-400"></div>
+      </form>
+    </div>
+  </div>
 </section>
 
 <script>
@@ -51,6 +101,50 @@ const { issueNumber } = Astro.props;
     const issueNumber = section.dataset.issue;
     if (!issueNumber) return;
 
+    function createCommentElement(comment: {
+      author: { login: string; avatarUrl: string };
+      bodyHtml: string;
+      createdAt: string;
+    }): HTMLDivElement {
+      const container = document.createElement('div');
+      container.className = 'border border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-800';
+
+      const header = document.createElement('div');
+      header.className = 'flex items-center gap-3 mb-3';
+
+      const avatar = document.createElement('img');
+      avatar.src = comment.author.avatarUrl;
+      avatar.alt = `${comment.author.login}'s avatar`;
+      avatar.width = 32;
+      avatar.height = 32;
+      avatar.loading = 'lazy';
+      avatar.className = 'rounded-full';
+
+      const username = document.createElement('a');
+      username.href = `https://github.com/${comment.author.login}`;
+      username.textContent = comment.author.login;
+      username.className =
+        'font-medium text-gray-900 dark:text-gray-100 hover:underline decoration-primary decoration-2';
+      username.target = '_blank';
+      username.rel = 'noopener noreferrer';
+
+      const timestamp = document.createElement('span');
+      timestamp.className = 'text-sm text-gray-500 dark:text-gray-400';
+      timestamp.textContent = timeAgo(comment.createdAt);
+
+      header.appendChild(avatar);
+      header.appendChild(username);
+      header.appendChild(timestamp);
+
+      const body = document.createElement('div');
+      body.className = 'prose dark:prose-invert prose-sm max-w-none';
+      body.innerHTML = DOMPurify.sanitize(comment.bodyHtml);
+
+      container.appendChild(header);
+      container.appendChild(body);
+      return container;
+    }
+
     try {
       const response = await fetch(`/api/comments?issue=${issueNumber}`);
       if (!response.ok) throw new Error('Failed to fetch comments');
@@ -67,43 +161,7 @@ const { issueNumber } = Astro.props;
         empty.classList.remove('hidden');
       } else {
         for (const comment of comments) {
-          const container = document.createElement('div');
-          container.className = 'border border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-800';
-
-          const header = document.createElement('div');
-          header.className = 'flex items-center gap-3 mb-3';
-
-          const avatar = document.createElement('img');
-          avatar.src = comment.author.avatarUrl;
-          avatar.alt = `${comment.author.login}'s avatar`;
-          avatar.width = 32;
-          avatar.height = 32;
-          avatar.loading = 'lazy';
-          avatar.className = 'rounded-full';
-
-          const username = document.createElement('a');
-          username.href = `https://github.com/${comment.author.login}`;
-          username.textContent = comment.author.login;
-          username.className =
-            'font-medium text-gray-900 dark:text-gray-100 hover:underline decoration-primary decoration-2';
-          username.target = '_blank';
-          username.rel = 'noopener noreferrer';
-
-          const timestamp = document.createElement('span');
-          timestamp.className = 'text-sm text-gray-500 dark:text-gray-400';
-          timestamp.textContent = timeAgo(comment.createdAt);
-
-          header.appendChild(avatar);
-          header.appendChild(username);
-          header.appendChild(timestamp);
-
-          const body = document.createElement('div');
-          body.className = 'prose dark:prose-invert prose-sm max-w-none';
-          body.innerHTML = DOMPurify.sanitize(comment.bodyHtml);
-
-          container.appendChild(header);
-          container.appendChild(body);
-          list.appendChild(container);
+          list.appendChild(createCommentElement(comment));
         }
       }
     } catch {
@@ -112,5 +170,99 @@ const { issueNumber } = Astro.props;
     } finally {
       loading.classList.add('hidden');
     }
+
+    const authPrompt = document.getElementById('auth-prompt');
+    const formWrapper = document.getElementById('comment-form-wrapper');
+    const signInBtn = document.getElementById('sign-in-btn') as HTMLAnchorElement | null;
+    const userAvatar = document.getElementById('user-avatar') as HTMLImageElement | null;
+    const userName = document.getElementById('user-name');
+    const viewOnGithub = document.getElementById('view-on-github') as HTMLAnchorElement | null;
+    const commentForm = document.getElementById('comment-form') as HTMLFormElement | null;
+    const commentBody = document.getElementById('comment-body') as HTMLTextAreaElement | null;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+    const formError = document.getElementById('form-error');
+
+    if (signInBtn) {
+      signInBtn.href = `/api/auth/start?redirect=${encodeURIComponent(window.location.pathname)}`;
+    }
+    if (viewOnGithub) {
+      viewOnGithub.href = `https://github.com/jerkeeler/keeler-dev/issues/${issueNumber}`;
+    }
+
+    function getGhUser(): { login: string; avatarUrl: string } | null {
+      const match = document.cookie.match(/(?:^|;\s*)gh_user=([^;]*)/);
+      if (!match) return null;
+      try {
+        return JSON.parse(decodeURIComponent(match[1]));
+      } catch {
+        return null;
+      }
+    }
+
+    function showAuthState(user: { login: string; avatarUrl: string } | null) {
+      if (user) {
+        if (userAvatar) userAvatar.src = user.avatarUrl;
+        if (userName) userName.textContent = user.login;
+        formWrapper?.classList.remove('hidden');
+        authPrompt?.classList.add('hidden');
+      } else {
+        formWrapper?.classList.add('hidden');
+        authPrompt?.classList.remove('hidden');
+      }
+    }
+
+    showAuthState(getGhUser());
+
+    function clearGhUserCookie() {
+      document.cookie = 'gh_user=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    }
+
+    commentForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!commentBody || !submitBtn || !formError) return;
+
+      const bodyText = commentBody.value.trim();
+      if (!bodyText) return;
+
+      submitBtn.disabled = true;
+      formError.classList.add('hidden');
+      formError.textContent = '';
+
+      try {
+        const res = await fetch('/api/comments', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ issueNumber: Number(issueNumber), body: bodyText }),
+        });
+
+        if (res.status === 401) {
+          clearGhUserCookie();
+          showAuthState(null);
+          formError.textContent = 'Session expired. Please sign in again.';
+          formError.classList.remove('hidden');
+          return;
+        }
+
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({ error: 'Something went wrong' }));
+          formError.textContent = data.error || 'Something went wrong';
+          formError.classList.remove('hidden');
+          return;
+        }
+
+        const data = await res.json();
+        commentBody.value = '';
+
+        const newComment = createCommentElement(data);
+        list.appendChild(newComment);
+
+        empty.classList.add('hidden');
+      } catch {
+        formError.textContent = 'Something went wrong';
+        formError.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
   })();
 </script>
