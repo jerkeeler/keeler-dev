@@ -1,7 +1,7 @@
 [build]
   base = ""
   publish = "dist/"
-  command = "npm ci && npm run build"
+  command = "npm ci --ignore-scripts && npm run build"
 
 [[redirects]]
   from = "https://keeler-dev.netlify.app/*"
