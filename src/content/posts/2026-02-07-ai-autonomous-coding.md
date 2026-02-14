@@ -5,7 +5,6 @@ title: 'Two and a Half Hours to Raymond'
 description: 'How I used AI to build a tool that creates Animal Crossing amiibos for any villager I want, in a single evening.'
 draft: false
 tags: ['ai', 'programming']
-issueNumber: 7
 ---
 
 Animal Crossing: New Horizons just dropped a massive [new update](https://animalcrossing.nintendo.com/new-horizons/update-3-0/), so naturally I wanted to start over on a fresh island. If you've ever played Animal Crossing, you know the pain: getting the villagers you actually want to live on your island is a _mission_. You visit mystery islands, you trade with friends and strangers, you hope and pray. With over [417 villagers](https://nookipedia.com/wiki/List_of_villagers#By_game) in the game, finding your favorites takes forever.
