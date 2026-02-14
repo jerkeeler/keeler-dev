@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
-      - run: node scripts/create-comment-issues.mjs
+      - run: node scripts/create-comment-issues.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
