@@ -9,10 +9,10 @@ const { slug } = Astro.props;
 ---
 
 <div class="like-container flex items-center gap-2">
+  <span class="like-count text-sm font-semibold text-gray-500 dark:text-gray-400" data-like-count>0</span>
   <button data-like-button data-slug={slug} aria-label="Like this post">
     <Heart class="like-heart" />
   </button>
-  <span class="like-count" data-like-count>&mdash;</span>
 </div>
 
 <style>
@@ -25,6 +25,7 @@ const { slug } = Astro.props;
     align-items: center;
     justify-content: center;
     transition: transform 0.1s ease;
+    overflow: visible;
   }
 
   button[data-like-button]:focus-visible {
@@ -236,11 +237,11 @@ const { slug } = Astro.props;
       })
       .then((data: { likes: number }) => {
         const serverCount = data.likes || 0;
-        countEl.textContent = String(serverCount + getUserLikes(slug));
+        countEl.textContent = String(serverCount);
       })
       .catch(() => {
         if (userLikes === 0) {
-          countEl.textContent = '\u2014';
+          countEl.textContent = '0';
         }
       });
 
@@ -270,6 +271,15 @@ const { slug } = Astro.props;
         button.addEventListener('animationend', () => button.classList.remove(animClass), { once: true });
       }
 
+      if (newUserLikes === MAX_LIKES) {
+        const rect = button.getBoundingClientRect();
+        const x = (rect.left + rect.width / 2) / window.innerWidth;
+        const y = (rect.top + rect.height / 2) / window.innerHeight;
+        import('canvas-confetti').then(({ default: confetti }) => {
+          confetti({ origin: { x, y }, particleCount: 80, spread: 70, startVelocity: 30 });
+        });
+      }
+
       button.disabled = true;
 
       try {
@@ -278,7 +288,19 @@ const { slug } = Astro.props;
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ slug }),
         });
-        if (!res.ok) throw new Error('POST failed');
+        const data = await res.json();
+
+        if (data.userLikes != null) {
+          setUserLikes(slug, data.userLikes);
+          setIntensity(heart, data.userLikes);
+        }
+
+        if (!res.ok) {
+          // Sync display with server truth instead of rolling back blindly
+          if (data.likes != null) {
+            countEl.textContent = String(data.likes);
+          }
+        }
       } catch {
         const rolledBack = newDisplay - 1;
         countEl.textContent = rolledBack > 0 ? String(rolledBack) : '\u2014';
