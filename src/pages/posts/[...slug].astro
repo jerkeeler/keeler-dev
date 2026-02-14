@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 
+import Comments from '../../components/comments/Comments.astro';
 import H1 from '../../components/typography/H1.astro';
 import LikeButton from '../../components/LikeButton.astro';
 import Layout from '../../layouts/Layout.astro';
@@ -25,11 +26,12 @@ export interface Props {
     description: string;
     date: Date;
     tags: string[];
+    issueNumber?: number;
   };
 }
 const {
   entry,
-  data: { title, description, tags, date },
+  data: { title, description, tags, date, issueNumber },
 } = Astro.props;
 const { Content } = await entry.render();
 ---
@@ -55,6 +57,15 @@ const { Content } = await entry.render();
     >
       <Content />
     </div>
+
+    {
+      issueNumber !== undefined && (
+        <>
+          <hr class="my-8 border-gray-300 dark:border-gray-600" />
+          <Comments issueNumber={issueNumber} />
+        </>
+      )
+    }
   </article>
 </Layout>
 
