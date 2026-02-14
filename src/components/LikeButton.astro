@@ -42,9 +42,20 @@ const { slug } = Astro.props;
   /* Intensity states */
   .intensity-0 {
     color: #9ca3af;
+    animation: idle-glow 2s ease-in-out infinite;
   }
   :global(.dark) .intensity-0 {
     color: #6b7280;
+  }
+
+  @keyframes idle-glow {
+    0%,
+    100% {
+      filter: drop-shadow(0 0 0px rgb(156 163 175 / 0));
+    }
+    50% {
+      filter: drop-shadow(0 0 6px rgb(239 68 68 / 0.4));
+    }
   }
 
   .intensity-1 {
