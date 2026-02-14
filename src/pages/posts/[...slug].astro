@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import H1 from '../../components/typography/H1.astro';
+import LikeButton from '../../components/LikeButton.astro';
 import Layout from '../../layouts/Layout.astro';
 import Tag from '../../components/Tag.astro';
 import { formatPostDate } from '../../utils';
@@ -37,14 +38,20 @@ const { Content } = await entry.render();
   <article>
     <H1>{title}</H1>
 
-    <p class="mb-1 text-gray-700 dark:text-gray-300">{formatPostDate(date)}</p>
+    <div class="flex items-start justify-between">
+      <div>
+        <p class="mb-1 text-gray-700 dark:text-gray-300">{formatPostDate(date)}</p>
 
-    <div class="leading-none flex flex-row flex-wrap">
-      {tags.map((tag) => <Tag tag={tag} />)}
+        <div class="leading-none flex flex-row flex-wrap">
+          {tags.map((tag) => <Tag tag={tag} />)}
+        </div>
+      </div>
+
+      <LikeButton slug={entry.slug} />
     </div>
 
     <div
-      class="mt-4 prose dark:prose-invert prose-a:decoration-primary prose-a:decoration-2 hover:prose-a:decoration-dashed prose-hr:my-3"
+      class="mt-4 prose prose-lg:max-w-none dark:prose-invert prose-a:decoration-primary prose-a:decoration-2 hover:prose-a:decoration-dashed prose-hr:my-3 max-w-none"
     >
       <Content />
     </div>

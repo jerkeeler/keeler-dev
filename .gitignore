@@ -24,3 +24,8 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+deno.lock
+
+# Generated slug list for Netlify Functions
+netlify/functions/valid-slugs.json

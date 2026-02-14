@@ -3,9 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "dev": "node scripts/generate-valid-slugs.js && astro dev",
+    "start": "node scripts/generate-valid-slugs.js && astro dev",
+    "build": "node scripts/generate-valid-slugs.js && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
@@ -15,9 +15,11 @@
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
+    "@netlify/blobs": "^10.6.0",
     "@netlify/functions": "^2.8.1",
     "@tailwindcss/typography": "^0.5.13",
     "astro": "^5.16.5",
+    "canvas-confetti": "^1.9.4",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
     "node-fetch": "^3.3.2",
@@ -30,6 +32,7 @@
   "devDependencies": {
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
+    "netlify": "^23.15.1",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1"
   },
