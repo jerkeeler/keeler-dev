@@ -248,7 +248,8 @@ const { slug } = Astro.props;
       })
       .then((data: { likes: number }) => {
         const serverCount = data.likes || 0;
-        countEl.textContent = String(serverCount);
+        const displayCount = Math.max(serverCount, userLikes);
+        countEl.textContent = String(displayCount);
       })
       .catch(() => {
         if (userLikes === 0) {
