@@ -137,9 +137,15 @@ const { issueNumber } = Astro.props;
       username.target = '_blank';
       username.rel = 'noopener noreferrer';
 
+      const date = new Date(comment.createdAt);
+      const formattedDate = date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      });
       const timestamp = document.createElement('span');
       timestamp.className = 'text-sm text-gray-500 dark:text-gray-400';
-      timestamp.textContent = timeAgo(comment.createdAt);
+      timestamp.textContent = `${formattedDate} (${timeAgo(comment.createdAt)})`;
 
       header.appendChild(avatar);
       header.appendChild(username);

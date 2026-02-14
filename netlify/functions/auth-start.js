@@ -20,6 +20,7 @@ export default async (req) => {
   const clientId = process.env.GITHUB_CLIENT_ID;
 
   if (!siteUrl || !clientId) {
+    console.error('OAuth start failed: missing SITE_URL or GITHUB_CLIENT_ID env vars');
     return new Response('Server configuration error', { status: 500 });
   }
 

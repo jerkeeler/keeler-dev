@@ -16,7 +16,8 @@ const postsNeedingIssues = files
     const { data, content } = matter(raw);
     return { filename, filePath, data, content };
   })
-  .filter(({ data }) => data.draft !== true && data.issueNumber === undefined);
+  .filter(({ data }) => data.draft !== true && data.issueNumber === undefined)
+  .sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
 
 if (postsNeedingIssues.length === 0) {
   console.log('No new posts need issues');

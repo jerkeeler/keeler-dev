@@ -41,6 +41,7 @@ async function handleGet(req) {
     }
 
     if (!ghResponse.ok) {
+      console.error(`Failed to fetch comments for issue #${issueNumber}: GitHub returned ${ghResponse.status}`);
       return new Response(JSON.stringify({ error: 'GitHub API error' }), {
         status: 502,
         headers: { 'Content-Type': 'application/json' },
@@ -59,7 +60,8 @@ async function handleGet(req) {
     }));
 
     return jsonResponse({ comments });
-  } catch {
+  } catch (err) {
+    console.error(`Failed to fetch comments for issue #${issueNumber}:`, err);
     return new Response(JSON.stringify({ error: 'GitHub API error' }), {
       status: 502,
       headers: { 'Content-Type': 'application/json' },
@@ -122,6 +124,8 @@ async function handlePost(req) {
     });
 
     if (ghResponse.status === 401 || ghResponse.status === 403) {
+      console.warn(`Auth failed posting to issue #${issueNumber}: GitHub returned ${ghResponse.status}`);
+
       const secure = isSecure(process.env.SITE_URL);
       const clearToken = serializeCookie('gh_token', '', {
         httpOnly: true,
@@ -178,7 +182,8 @@ async function handlePost(req) {
         headers: { 'Content-Type': 'application/json' },
       }
     );
-  } catch {
+  } catch (err) {
+    console.error(`Failed to post comment to issue #${issueNumber}:`, err);
     return new Response(JSON.stringify({ error: 'Failed to post comment' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },

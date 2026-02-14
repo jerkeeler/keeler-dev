@@ -30,6 +30,7 @@ export default async (req) => {
   }
 
   if (!state || !savedState || state !== savedState) {
+    console.warn('OAuth callback failed: state mismatch');
     return new Response(null, {
       status: 302,
       headers: {
@@ -40,6 +41,7 @@ export default async (req) => {
   }
 
   if (!code) {
+    console.warn('OAuth callback failed: no code parameter from GitHub');
     return new Response(null, {
       status: 302,
       headers: {
@@ -66,6 +68,7 @@ export default async (req) => {
     const tokenData = await tokenRes.json();
 
     if (!tokenData.access_token) {
+      console.error('OAuth callback failed: token exchange returned no access_token');
       return new Response(null, {
         status: 302,
         headers: {
@@ -83,6 +86,7 @@ export default async (req) => {
     });
 
     if (!userRes.ok) {
+      console.error(`OAuth callback failed: GitHub user fetch returned ${userRes.status}`);
       return new Response(null, {
         status: 302,
         headers: {
@@ -122,7 +126,8 @@ export default async (req) => {
         ['Set-Cookie', userCookie],
       ],
     });
-  } catch {
+  } catch (err) {
+    console.error('OAuth callback failed:', err);
     return new Response(null, {
       status: 302,
       headers: {
