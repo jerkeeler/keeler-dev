@@ -13,6 +13,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 No test framework is configured.
 
+Astro 7 detaches `astro dev` into the background when it detects an AI agent, which makes `netlify dev` exit right after it starts. Agents should run `env -u CLAUDECODE -u AI_AGENT netlify dev`, and `npx astro dev stop` to clean up a detached server.
+
 ## Architecture
 
 Astro 7 static site (keeler.dev) deployed on Netlify. Blog posts are markdown in a content collection; everything else is static pages.
