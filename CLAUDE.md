@@ -22,7 +22,7 @@ Astro 5 static site (keeler.dev) deployed on Netlify. Blog posts are markdown in
 - `src/pages/` — File-based routing. `posts/[...slug].astro` generates a page per blog post.
 - `src/layouts/Layout.astro` — Single layout wrapping all pages (navbar, footer, dark mode, meta tags).
 - `src/content/posts/*.md` — Blog posts with Zod-validated frontmatter (`title`, `description`, `date`, `tags`, `draft`).
-- `src/content/config.ts` — Content collection schema definition.
+- `src/content.config.ts` — Content collection loader and schema definition.
 - `netlify/functions/` — Serverless API endpoints (like counter). Use `.ts` not `.mts` — the project has `"type": "module"`.
 - `src/utils.ts` — Shared utilities (currently `formatPostDate`).
 

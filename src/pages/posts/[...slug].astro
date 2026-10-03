@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 import Comments from '../../components/comments/Comments.astro';
 import H1 from '../../components/typography/H1.astro';
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const postEntries = await getCollection('posts', ({ data }) => !data.draft || import.meta.env.DEV);
 
   return postEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry, data: entry.data },
   }));
 }
@@ -33,7 +33,7 @@ const {
   entry,
   data: { title, description, tags, date, issueNumber },
 } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Layout title={title} description={description}>
@@ -49,7 +49,7 @@ const { Content } = await entry.render();
         </div>
       </div>
 
-      <LikeButton slug={entry.slug} />
+      <LikeButton slug={entry.id} />
     </div>
 
     <div
