@@ -29,3 +29,6 @@ deno.lock
 
 # Generated slug list for Netlify Functions
 netlify/functions/valid-slugs.json
+
+# Playwright MCP screenshots and logs
+.playwright-mcp/
