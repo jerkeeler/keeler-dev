@@ -15,7 +15,7 @@ No test framework is configured.
 
 ## Architecture
 
-Astro 5 static site (keeler.dev) deployed on Netlify. Blog posts are markdown in a content collection; everything else is static pages.
+Astro 7 static site (keeler.dev) deployed on Netlify. Blog posts are markdown in a content collection; everything else is static pages.
 
 ### Key paths
 
