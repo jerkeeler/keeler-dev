@@ -37,7 +37,7 @@ The like counter (`LikeButton.astro`) is the main interactive feature:
 
 ### Styling
 
-Tailwind 3 with `darkMode: 'class'`. Dark mode toggled via localStorage key `theme` and a `dark` class on `<html>`. Typography plugin styles blog post prose. Component-scoped `<style>` blocks for non-Tailwind CSS (animations, etc.).
+Tailwind 4, configured in `src/styles/global.css` (no `tailwind.config`). `src/styles/tailwind-v3-colors.css` pins the Tailwind 3 palette. Dark mode toggled via localStorage key `theme` and a `dark` class on `<html>`. Typography plugin styles blog post prose. Component-scoped `<style>` blocks for non-Tailwind CSS (animations, etc.).
 
 ## Conventions
 

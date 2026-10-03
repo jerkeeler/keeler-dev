@@ -1,6 +1,7 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
 export interface Props {
   title: string;
@@ -56,9 +57,9 @@ const fullTitle = `${title} - Keeler`;
 
   <body class="bg-white dark:bg-gray-900">
     <div class="flex justify-center min-h-screen text-gray-800 dark:text-gray-100">
-      <div class="w-full max-w-screen-lg flex-grow flex flex-col md:flex-row-reverse p-4">
+      <div class="w-full max-w-(--breakpoint-lg) grow flex flex-col md:flex-row-reverse p-4">
         <Navbar />
-        <div class="flex-grow md:mr-40">
+        <div class="grow md:mr-40">
           <main><slot /></main>
           <Footer />
         </div>

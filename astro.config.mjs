@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 
 import rehypeFigure from 'rehype-figure';
 import rehypeKatex from 'rehype-katex';
@@ -13,5 +13,8 @@ export default defineConfig({
     rehypePlugins: [rehypeFigure, rehypeKatex],
   },
   site: 'https://keeler.dev',
-  integrations: [sitemap(), tailwind()],
+  integrations: [sitemap()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
