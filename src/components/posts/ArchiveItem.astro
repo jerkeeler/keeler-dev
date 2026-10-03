@@ -12,7 +12,7 @@ const { post } = Astro.props;
 
 <li class="mt-2 first:mt-0">
   <p class="grid sm:flex">
-    <Link to={`/posts/${post.slug}`}>
+    <Link to={`/posts/${post.id}`}>
       {post.data.title}
     </Link>
     <span>

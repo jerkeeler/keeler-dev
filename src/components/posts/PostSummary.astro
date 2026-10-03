@@ -10,7 +10,7 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<Link to={`/posts/${post.slug}`}>
+<Link to={`/posts/${post.id}`}>
   {post.data.title}
 </Link>
 <p class="text-xs">{formatPostDate(post.data.date)}</p>

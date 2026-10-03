@@ -1,5 +1,5 @@
 ---
-import dayjs from 'dayjs';
+import { formatDuration } from '../../utils';
 
 export interface Props {
   startDate?: Date;
@@ -23,31 +23,7 @@ if (endDate) {
   });
 }
 
-let diffStr = '';
-if (startDate) {
-  const start = dayjs(startDate);
-  const end = dayjs(endDate);
-  let diffMonth = end.diff(start, 'month');
-  const diffYear = end.diff(start, 'year');
-  diffMonth = diffMonth - diffYear * 12;
-
-  if (diffYear > 0) {
-    diffStr = `${diffYear} year`;
-  }
-  if (diffYear > 1) {
-    diffStr += 's';
-  }
-
-  if (diffMonth > 0 && diffYear > 0) {
-    diffStr += `, ${diffMonth} month`;
-  } else if (diffMonth > 0 && diffYear == 0) {
-    diffStr += `${diffMonth} month`;
-  }
-
-  if (diffMonth > 1) {
-    diffStr += 's';
-  }
-}
+const diffStr = startDate ? formatDuration(startDate, endDate ?? new Date()) : '';
 ---
 
 <div class="pr-4">

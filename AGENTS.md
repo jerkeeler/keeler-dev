@@ -33,5 +33,5 @@
 
 ## Configuration & Deployment Notes
 
-- Site configuration lives in `astro.config.mjs`, `tailwind.config.cjs`, and `tsconfig.json`.
+- Site configuration lives in `astro.config.mjs`, `src/styles/global.css` (Tailwind), and `tsconfig.json`.
 - Deploys are handled by Netlify; ensure `netilfy.toml` and `netlify/functions/` stay in sync with production behavior.

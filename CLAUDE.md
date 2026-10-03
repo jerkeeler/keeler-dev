@@ -9,22 +9,25 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run build` — Production build to `dist/`
 - `npm run preview` — Serve production build locally
 - `npm run format` — Prettier across the repo
-- `npm run astro -- check` — TypeScript diagnostics for Astro files
+- `npm run check` — TypeScript diagnostics for Astro files (`astro check`)
+- `npm test` — Unit tests with Node's built-in test runner (`src/**/*.test.ts`)
 
-No test framework is configured.
+Netlify installs with npm 10.9.2, and `npm install` on npm 11 rewrites `package-lock.json` into a form that npm 10's `npm ci` rejects. After changing dependencies, run `npx npm@10.9.2 install --package-lock-only` and commit that lockfile.
+
+Astro 7 detaches `astro dev` into the background when it detects an AI agent, which makes `netlify dev` exit right after it starts. Agents should run `env -u CLAUDECODE -u AI_AGENT netlify dev`, and `npx astro dev stop` to clean up a detached server.
 
 ## Architecture
 
-Astro 5 static site (keeler.dev) deployed on Netlify. Blog posts are markdown in a content collection; everything else is static pages.
+Astro 7 static site (keeler.dev) deployed on Netlify. Blog posts are markdown in a content collection; everything else is static pages.
 
 ### Key paths
 
 - `src/pages/` — File-based routing. `posts/[...slug].astro` generates a page per blog post.
 - `src/layouts/Layout.astro` — Single layout wrapping all pages (navbar, footer, dark mode, meta tags).
 - `src/content/posts/*.md` — Blog posts with Zod-validated frontmatter (`title`, `description`, `date`, `tags`, `draft`).
-- `src/content/config.ts` — Content collection schema definition.
+- `src/content.config.ts` — Content collection loader and schema definition.
 - `netlify/functions/` — Serverless API endpoints (like counter). Use `.ts` not `.mts` — the project has `"type": "module"`.
-- `src/utils.ts` — Shared utilities (currently `formatPostDate`).
+- `src/utils.ts` — Shared utilities (`formatPostDate`, `formatDuration`), tested in `src/utils.test.ts`.
 
 ### Like system
 
@@ -37,7 +40,7 @@ The like counter (`LikeButton.astro`) is the main interactive feature:
 
 ### Styling
 
-Tailwind 3 with `darkMode: 'class'`. Dark mode toggled via localStorage key `theme` and a `dark` class on `<html>`. Typography plugin styles blog post prose. Component-scoped `<style>` blocks for non-Tailwind CSS (animations, etc.).
+Tailwind 4, configured in `src/styles/global.css` (no `tailwind.config`). `src/styles/tailwind-v3-colors.css` pins the Tailwind 3 palette. Dark mode toggled via localStorage key `theme` and a `dark` class on `<html>`. Typography plugin styles blog post prose. Component-scoped `<style>` blocks for non-Tailwind CSS (animations, etc.).
 
 ## Conventions
 
