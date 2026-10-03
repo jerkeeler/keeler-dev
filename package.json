@@ -9,6 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
+    "check": "astro check",
+    "test": "node --experimental-strip-types --test 'src/**/*.test.ts'",
     "prepare": "husky || true"
   },
   "dependencies": {
@@ -22,9 +24,7 @@
     "astro": "^7.3.5",
     "canvas-confetti": "^1.9.4",
     "classnames": "^2.5.1",
-    "dayjs": "^1.11.23",
     "dompurify": "^3.4.16",
-    "node-fetch": "^3.3.2",
     "rehype-figure": "^1.0.1",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
@@ -32,13 +32,16 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "@octokit/rest": "^22.0.1",
+    "@types/canvas-confetti": "^1.9.0",
     "gray-matter": "^4.0.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "netlify": "^27.10.2",
     "prettier": "^3.9.9",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^6.0.3"
   },
   "lint-staged": {
     "*.{js,cjs,mjs,ts,tsx,astro,json,css,md}": "prettier --write"

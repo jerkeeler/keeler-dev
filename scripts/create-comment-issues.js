@@ -24,7 +24,7 @@ if (postsNeedingIssues.length === 0) {
   process.exit(0);
 }
 
-for (const { filename, filePath, data, content } of postsNeedingIssues) {
+for (const { filename, filePath, data } of postsNeedingIssues) {
   const slug = data.slug || filename.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
 
   try {

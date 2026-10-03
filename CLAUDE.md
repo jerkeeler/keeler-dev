@@ -9,9 +9,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run build` — Production build to `dist/`
 - `npm run preview` — Serve production build locally
 - `npm run format` — Prettier across the repo
-- `npm run astro -- check` — TypeScript diagnostics for Astro files
+- `npm run check` — TypeScript diagnostics for Astro files (`astro check`)
+- `npm test` — Unit tests with Node's built-in test runner (`src/**/*.test.ts`)
 
-No test framework is configured.
+Netlify installs with npm 10.9.2, and `npm install` on npm 11 rewrites `package-lock.json` into a form that npm 10's `npm ci` rejects. After changing dependencies, run `npx npm@10.9.2 install --package-lock-only` and commit that lockfile.
 
 Astro 7 detaches `astro dev` into the background when it detects an AI agent, which makes `netlify dev` exit right after it starts. Agents should run `env -u CLAUDECODE -u AI_AGENT netlify dev`, and `npx astro dev stop` to clean up a detached server.
 
@@ -26,7 +27,7 @@ Astro 7 static site (keeler.dev) deployed on Netlify. Blog posts are markdown in
 - `src/content/posts/*.md` — Blog posts with Zod-validated frontmatter (`title`, `description`, `date`, `tags`, `draft`).
 - `src/content.config.ts` — Content collection loader and schema definition.
 - `netlify/functions/` — Serverless API endpoints (like counter). Use `.ts` not `.mts` — the project has `"type": "module"`.
-- `src/utils.ts` — Shared utilities (currently `formatPostDate`).
+- `src/utils.ts` — Shared utilities (`formatPostDate`, `formatDuration`), tested in `src/utils.test.ts`.
 
 ### Like system
 
